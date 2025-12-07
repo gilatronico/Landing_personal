@@ -1,35 +1,17 @@
 {
   "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "index_generic.html",
-      "use": "@vercel/static"
+      "source": "/",
+      "destination": "/index.html"
     },
     {
-      "src": "index-artist.html",
-      "use": "@vercel/static"
+      "source": "/artist",
+      "destination": "/index-artist.html"
     },
     {
-      "src": "index-professional.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/",
-      "dest": "/index_generic.html"
-    },
-    {
-      "src": "/artist",
-      "dest": "/index-artist.html"
-    },
-    {
-      "src": "/professional",
-      "dest": "/index-professional.html"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
+      "source": "/professional",
+      "destination": "/index-professional.html"
     }
   ],
   "headers": [
@@ -47,6 +29,19 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/(.*\\.(html|css|js))",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
         }
       ]
     }
