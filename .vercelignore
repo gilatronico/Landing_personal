@@ -1,0 +1,5 @@
+alejandro-gilabert-portfolio/
+.git/
+node_modules/
+*.md
+!README.md
