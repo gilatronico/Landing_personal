@@ -1,0 +1,19 @@
+{
+  "name": "alejandro-gilabert-landing",
+  "version": "1.0.0",
+  "description": "Landing page personal con portafolios Artista y Profesional",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve . -p 3000",
+    "start": "npm run dev",
+    "lint": "echo 'No linter configured yet'",
+    "deploy": "echo 'Use: git push (Vercel deploys automatically)'"
+  },
+  "keywords": [
+    "portfolio",
+    "landing-page",
+    "static-site"
+  ],
+  "author": "Alejandro Gilabert",
+  "license": "MIT"
+}

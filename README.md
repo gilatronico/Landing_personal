@@ -1,237 +1,178 @@
 # 🚀 Landing Page - Alejandro Gilabert
 
-Portafolio personal con dos versiones: Artista y Profesional.
+Portafolio personal con dos versiones: **Artista** y **Profesional**.
 
 ## 📋 Estructura del Proyecto
 
 ```
 .
-├── index_generic.html      # Landing page de selección
+├── index.html              # Landing page principal (selección Artista/Profesional)
 ├── index-artist.html       # Portafolio Artista
 ├── index-professional.html # Portafolio Profesional
 ├── images/                 # Imágenes del proyecto
-├── Makefile               # Comandos para gestión de Git/GitHub
+├── vercel.json            # Configuración de Vercel
+├── package.json           # Scripts de desarrollo
 └── README.md              # Este archivo
 ```
 
-## 🛠️ Uso del Makefile
+## 🚀 Deploy con GitHub + Vercel
 
-El Makefile incluye comandos útiles para gestionar el repositorio de GitHub.
-
-### Comandos Disponibles
-
-#### Configuración Inicial
+### Paso 1: Inicializar Git (si no está inicializado)
 
 ```bash
-# Ver todos los comandos disponibles
+# Inicializar repositorio Git
+git init
+
+# Agregar todos los archivos
+git add .
+
+# Hacer primer commit
+git commit -m "Initial commit: Landing page completa"
+```
+
+### Paso 2: Crear repositorio en GitHub
+
+1. Ve a https://github.com/new
+2. Crea un nuevo repositorio (ej: `Landing_personal`)
+3. **NO** inicialices con README, .gitignore o licencia (ya los tienes)
+
+### Paso 3: Conectar y subir a GitHub
+
+```bash
+# Agregar remote (reemplaza con tu URL)
+git remote add origin https://github.com/gilatronico/Landing_personal.git
+
+# Cambiar a rama main (si es necesario)
+git branch -M main
+
+# Subir código
+git push -u origin main
+```
+
+### Paso 4: Desplegar en Vercel
+
+1. Ve a https://vercel.com/new
+2. **Import Git Repository**: Selecciona tu repositorio de GitHub
+3. **Configure Project**:
+   - **Framework Preset**: `Other`
+   - **Root Directory**: `.` (dejar vacío o poner punto)
+   - **Build Command**: (dejar **VACÍO**)
+   - **Output Directory**: `.` (dejar vacío o poner punto)
+   - **Install Command**: (dejar **VACÍO**)
+4. Click en **Deploy**
+
+### Paso 5: Verificar
+
+Una vez desplegado, Vercel te dará una URL. Deberías poder acceder a:
+- `/` → Landing page principal
+- `/artist` → Portafolio Artista
+- `/professional` → Portafolio Profesional
+
+## 🛠️ Desarrollo Local
+
+### Scripts disponibles (package.json)
+
+```bash
+# Servir el sitio localmente en http://localhost:3000
+npm run dev
+
+# O usar directamente
+npx serve . -p 3000
+```
+
+### Comandos Git útiles
+
+```bash
+# Ver estado
+git status
+
+# Agregar cambios
+git add .
+
+# Commit
+git commit -m "Descripción de cambios"
+
+# Push (Vercel desplegará automáticamente)
+git push origin main
+```
+
+## 📝 Configuración de Vercel
+
+El archivo `vercel.json` está configurado para:
+
+- **Servir archivos estáticos** desde la raíz del proyecto
+- **Routing automático**:
+  - `/` → `index.html`
+  - `/artist` → `index-artist.html`
+  - `/professional` → `index-professional.html`
+- **Headers de seguridad** configurados
+
+## 🔄 Workflow de Deploy
+
+Después de la configuración inicial, cada push a GitHub desplegará automáticamente:
+
+```bash
+# 1. Hacer cambios en los archivos
+# 2. Agregar y commitear
+git add .
+git commit -m "Descripción de cambios"
+
+# 3. Push (Vercel detecta y despliega automáticamente)
+git push origin main
+```
+
+## 🛠️ Uso del Makefile (Opcional)
+
+Si prefieres usar el Makefile incluido:
+
+```bash
+# Ver todos los comandos
 make help
 
-# Inicializar repositorio Git (si no existe)
-make init
-
-# Configurar repositorio y crear .gitignore
-make setup
-
-# Configurar el remote de GitHub
-make remote URL="https://github.com/gilatronico/Landing_personal.git"
-```
-
-#### Trabajo Diario
-
-```bash
-# Ver el estado del repositorio
-make status
-
-# Ver cambios pendientes antes de commit
-make changes
-
-# Despliegue rápido (mensaje interactivo)
+# Despliegue rápido (interactivo)
 make quick-deploy
 
-# Despliegue completo (requiere mensaje)
+# Despliegue con mensaje
 make deploy M="Tu mensaje de commit"
-
-# O usar el script bash
-./deploy.sh "Tu mensaje de commit"
-./deploy.sh  # Modo interactivo
-
-# Comandos individuales
-make add
-make commit M="Tu mensaje de commit"
-make push
 ```
 
-#### Comandos para Vercel
+## 📁 Archivos de Configuración
 
-```bash
-# Ver información sobre Vercel
-make vercel-info
+- **`.gitignore`**: Archivos a ignorar en Git (OS, editor, logs, etc.)
+- **`vercel.json`**: Configuración de routing y headers para Vercel
+- **`package.json`**: Scripts de desarrollo (sin dependencias)
 
-# Desplegar a GitHub (Vercel se actualiza automáticamente)
-make vercel-deploy M="Tu mensaje"
+## ✅ Verificación
 
-# Enlazar proyecto con Vercel CLI (opcional)
-make vercel-link
+Antes de hacer commit, verifica:
 
-# Desplegar a producción con Vercel CLI
-make vercel-prod M="Tu mensaje"
-```
+- [ ] Todos los archivos HTML están en la raíz
+- [ ] `index.html` existe y es accesible
+- [ ] `vercel.json` está configurado correctamente
+- [ ] `.gitignore` incluye archivos temporales
 
-#### Otros Comandos Útiles
+## 🐛 Troubleshooting
 
-```bash
-# Sincronizar: descargar y subir cambios
-make sync
+### Error 404 en Vercel
 
-# Descargar últimos cambios
-make pull
+1. Verifica que `index.html` esté en la raíz del repositorio
+2. Verifica la configuración en Vercel Dashboard:
+   - Framework: `Other`
+   - Build Command: (vacío)
+   - Output Directory: `.`
+3. Revisa los logs del deployment en Vercel
 
-# Ver historial de commits
-make log
+### Los cambios no se despliegan
 
-# Ver información del repositorio
-make info
+1. Verifica que el push a GitHub fue exitoso
+2. Revisa que Vercel esté conectado al repositorio correcto
+3. Verifica los logs en Vercel Dashboard
 
-# Limpiar archivos no rastreados
-make clean
-```
+## 📚 Recursos
 
-## 🚀 Inicio Rápido
-
-### Primera vez (nuevo repositorio)
-
-1. **Configurar el repositorio:**
-   ```bash
-   make setup
-   ```
-
-2. **Configurar el remote de GitHub:**
-   ```bash
-   # Opción 1: Manualmente
-   make remote URL="https://github.com/gilatronico/Landing_personal.git"
-   
-   # Opción 2: Si tienes GitHub CLI instalado
-   make create-repo
-   ```
-
-3. **Hacer el primer commit y push:**
-   ```bash
-   make deploy M="Initial commit"
-   ```
-
-### Trabajo diario
-
-```bash
-# Opción 1: Despliegue rápido (interactivo)
-make quick-deploy
-
-# Opción 2: Despliegue con mensaje
-make deploy M="Descripción de los cambios"
-
-# Opción 3: Usar script bash
-./deploy.sh "Descripción de los cambios"
-```
-
-## ⚙️ Configuración
-
-Puedes editar las variables en el Makefile según tus necesidades:
-
-```makefile
-GIT_REMOTE ?= origin      # Nombre del remote
-GIT_BRANCH ?= main        # Rama principal
-REPO_NAME ?= Landing_personal      # Nombre del repositorio
-GITHUB_USER ?= gilatronico # Tu usuario de GitHub
-```
-
-## 📝 Ejemplos de Uso
-
-### Ejemplo 1: Primer despliegue
-
-```bash
-# 1. Configurar repositorio
-make setup
-
-# 2. Agregar remote
-make remote URL="https://github.com/gilatronico/Landing_personal.git"
-
-# 3. Hacer commit y push
-make deploy M="Initial commit: Landing page completa"
-```
-
-### Ejemplo 2: Actualización diaria (más rápido)
-
-```bash
-# Opción A: Despliegue interactivo
-make quick-deploy
-
-# Opción B: Con mensaje directo
-make deploy M="Mejoras en hero section y animaciones"
-
-# Opción C: Con script bash
-./deploy.sh "Mejoras en hero section y animaciones"
-```
-
-### Ejemplo 3: Verificar cambios antes de commit
-
-```bash
-# Ver qué archivos cambiaron
-make changes
-
-# Si todo está bien, desplegar
-make deploy M="Descripción de cambios"
-```
-
-### Ejemplo 4: Desplegar a Vercel
-
-```bash
-# Ver información sobre Vercel
-make vercel-info
-
-# Desplegar (Vercel se actualiza automáticamente)
-make vercel-deploy M="Nuevas features"
-```
-
-### Ejemplo 5: Solo commit sin push
-
-```bash
-make add
-make commit M="WIP: Trabajando en nuevas features"
-# ... seguir trabajando ...
-make push
-```
-
-## 🔧 Requisitos
-
-- **Git** instalado
-- **Make** (generalmente preinstalado en macOS/Linux)
-- **GitHub CLI (opcional)** para `make create-repo`
-
-## 📚 Más Información
-
-- [Documentación de Git](https://git-scm.com/doc)
+- [Documentación de Vercel](https://vercel.com/docs)
 - [GitHub Docs](https://docs.github.com)
-- [Makefile Tutorial](https://makefiletutorial.com/)
-
-## 🐛 Solución de Problemas
-
-### Error: "No hay remote configurado"
-
-```bash
-# Configura el remote primero
-make remote URL="https://github.com/gilatronico/Landing_personal.git"
-```
-
-### Error: "GitHub CLI no está instalado"
-
-Para usar `make create-repo`, instala GitHub CLI:
-- macOS: `brew install gh`
-- Linux: Ver [instrucciones oficiales](https://cli.github.com/)
-
-### Ver información del repositorio
-
-```bash
-make info
-```
+- [Git Documentation](https://git-scm.com/doc)
 
 ---
 
