@@ -33,7 +33,7 @@ make init
 make setup
 
 # Configurar el remote de GitHub
-make remote URL="https://github.com/tu-usuario/tu-repo.git"
+make remote URL="https://github.com/gilatronico/Landing_personal.git"
 ```
 
 #### Trabajo Diario
@@ -83,7 +83,7 @@ make clean
 2. **Configurar el remote de GitHub:**
    ```bash
    # Opción 1: Manualmente
-   make remote URL="https://github.com/tu-usuario/tu-repo.git"
+   make remote URL="https://github.com/gilatronico/Landing_personal.git"
    
    # Opción 2: Si tienes GitHub CLI instalado
    make create-repo
@@ -108,8 +108,8 @@ Puedes editar las variables en el Makefile según tus necesidades:
 ```makefile
 GIT_REMOTE ?= origin      # Nombre del remote
 GIT_BRANCH ?= main        # Rama principal
-REPO_NAME ?= tu-repo      # Nombre del repositorio
-GITHUB_USER ?= tu-usuario # Tu usuario de GitHub
+REPO_NAME ?= Landing_personal      # Nombre del repositorio
+GITHUB_USER ?= gilatronico # Tu usuario de GitHub
 ```
 
 ## 📝 Ejemplos de Uso
@@ -121,7 +121,7 @@ GITHUB_USER ?= tu-usuario # Tu usuario de GitHub
 make setup
 
 # 2. Agregar remote
-make remote URL="https://github.com/alejandrogilabert/landing-page.git"
+make remote URL="https://github.com/gilatronico/Landing_personal.git"
 
 # 3. Hacer commit y push
 make deploy M="Initial commit: Landing page completa"
@@ -161,7 +161,7 @@ make push
 
 ```bash
 # Configura el remote primero
-make remote URL="https://github.com/tu-usuario/tu-repo.git"
+make remote URL="https://github.com/gilatronico/Landing_personal.git"
 ```
 
 ### Error: "GitHub CLI no está instalado"
