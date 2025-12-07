@@ -1,0 +1,2914 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Alejandro Gilabert | Electronic Music Artist</title>
+    <meta name="description" content="Productor, DJ y cantante especializado en música electrónica. Madrid-based, creando sonidos globales.">
+    <meta name="keywords" content="Electronic Music, DJ, Producer, Music, Electronic, Madrid, Spotify">
+    <meta name="author" content="Alejandro Gilabert">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alejandrogilabert.com/artist">
+    <meta property="og:title" content="Alejandro Gilabert | Electronic Music Artist">
+    <meta property="og:description" content="Productor, DJ y cantante especializado en música electrónica. Madrid-based.">
+    <meta property="og:image" content="images/toma3.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://alejandrogilabert.com/artist">
+    <meta name="twitter:title" content="Alejandro Gilabert | Electronic Music Artist">
+    <meta name="twitter:description" content="Productor, DJ y cantante especializado en música electrónica. Madrid-based.">
+    <meta name="twitter:image" content="images/toma3.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Circular+Std:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alejandro Gilabert Ramírez",
+        "jobTitle": "Electronic Music Artist",
+        "url": "https://alejandrogilabert.com/artist",
+        "sameAs": [
+            "https://open.spotify.com/intl-es/artist/44CrAVRlYEbpintVS3jkmo"
+        ]
+    }
+    </script>
+
+    <style>
+        /* ============================================
+           CSS VARIABLES - Spotify-Inspired Music Palette
+           ============================================ */
+        :root {
+            /* Spotify Dark Theme Colors */
+            --bg-primary: #121212;
+            --bg-secondary: #181818;
+            --bg-tertiary: #1a1a1a;
+            --bg-card: #1d1d1d;
+            --bg-hover: #2a2a2a;
+            --bg-active: #333333;
+            
+            /* Spotify Green Accent */
+            --spotify-green: #1DB954;
+            --spotify-green-hover: #1ed760;
+            --spotify-green-dark: #1aa34a;
+            
+            /* Text Colors */
+            --text-primary: #FFFFFF;
+            --text-secondary: #B3B3B3;
+            --text-tertiary: #727272;
+            --text-muted: #535353;
+            
+            /* Accent Colors - Music Vibes */
+            --accent-purple: #8B5CF6;
+            --accent-pink: #EC4899;
+            --accent-cyan: #06B6D4;
+            --accent-orange: #F59E0B;
+            
+            /* Borders & Dividers */
+            --border-color: #2a2a2a;
+            --divider: #3e3e3e;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 20px rgba(29, 185, 84, 0.3);
+            
+            /* Spacing System */
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-2xl: 48px;
+            --space-3xl: 64px;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-full: 50%;
+            
+            /* Transitions */
+            --transition-fast: 0.15s ease;
+            --transition-base: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+
+        /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: var(--space-lg);
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: all var(--transition-base);
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           NAVIGATION - Spotify Style
+           ============================================ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: var(--space-md) 0;
+            transition: all var(--transition-base);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--space-xl);
+        }
+
+        .nav-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--spotify-green);
+            text-decoration: none;
+            transition: all var(--transition-base);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-logo:hover {
+            color: var(--spotify-green-hover);
+            transform: scale(1.05);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+
+        .nav-menu li a {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.9375rem;
+            position: relative;
+            padding: var(--space-xs) 0;
+            transition: color var(--transition-base);
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            color: var(--text-primary);
+        }
+
+        .nav-menu li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--spotify-green);
+            border-radius: var(--radius-sm);
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .nav-switch {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            padding: var(--space-sm) var(--space-md);
+            cursor: pointer;
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            transition: all var(--transition-base);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            min-height: 36px;
+        }
+
+        .nav-switch:hover {
+            border-color: var(--spotify-green);
+            color: var(--spotify-green);
+            transform: translateY(-1px);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: var(--space-xs);
+            color: var(--text-primary);
+            font-size: 1.5rem;
+        }
+
+        /* ============================================
+           HERO SECTION - Spotify Profile Style
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            padding-top: 120px;
+            padding-bottom: var(--space-3xl);
+            background: linear-gradient(180deg, #1a1a2e 0%, var(--bg-primary) 50%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(29, 185, 84, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: var(--space-2xl);
+            align-items: end;
+            margin-bottom: var(--space-3xl);
+        }
+
+        .hero-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: var(--radius-lg);
+            background-image: url('images/toma3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            position: relative;
+            overflow: visible;
+        }
+
+        .avatar-image {
+            display: none;
+        }
+
+        .avatar-badge {
+            position: absolute;
+            bottom: -8px;
+            right: -8px;
+            background: var(--accent-pink);
+            color: var(--text-primary);
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: var(--shadow-md);
+            animation: pulse 2s infinite;
+            z-index: 3;
+            white-space: nowrap;
+        }
+
+        @keyframes pulse {
+            0%, 100% { 
+                opacity: 1; 
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.8; 
+                transform: scale(1.05);
+            }
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: var(--spotify-green);
+            font-weight: 600;
+            font-style: italic;
+            margin-top: var(--space-md);
+            margin-bottom: var(--space-lg);
+            letter-spacing: -0.01em;
+        }
+
+        .hero-avatar::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .hero-info h1 {
+            margin-bottom: var(--space-sm);
+            font-size: clamp(3rem, 8vw, 5.5rem);
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: var(--space-lg);
+            font-weight: 400;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: var(--space-xl);
+            margin-top: var(--space-lg);
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .btn {
+            padding: var(--space-md) var(--space-2xl);
+            border: none;
+            border-radius: var(--radius-full);
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: var(--spotify-green);
+            color: var(--bg-primary);
+            font-weight: 700;
+        }
+
+        .btn-primary:hover {
+            background: var(--spotify-green-hover);
+            transform: scale(1.05);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-primary);
+            color: var(--bg-primary);
+            transform: scale(1.05);
+        }
+
+        /* ============================================
+           SECTIONS
+           ============================================ */
+        .section {
+            padding: var(--space-3xl) 0;
+        }
+
+        .section-header {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .section-header h2 {
+            margin-bottom: var(--space-sm);
+        }
+
+        .section-header p {
+            font-size: 1rem;
+            max-width: 600px;
+        }
+
+        /* ============================================
+           TRACK LIST - Spotify Style
+           ============================================ */
+        .tracks-container {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .track-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+
+        .track-item {
+            display: grid;
+            grid-template-columns: 40px 1fr auto auto;
+            gap: var(--space-md);
+            align-items: center;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-base);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .track-item:hover {
+            background: var(--bg-hover);
+        }
+
+        .track-item:hover .track-play-btn {
+            opacity: 1;
+        }
+
+        .track-number {
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .track-item:hover .track-number {
+            opacity: 0;
+        }
+
+        .track-play-btn {
+            position: absolute;
+            left: 12px;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            background: var(--spotify-green);
+            border: none;
+            color: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: all var(--transition-base);
+            font-size: 1.2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .track-play-btn:hover {
+            background: var(--spotify-green-hover);
+            transform: scale(1.1);
+        }
+
+        .track-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+            min-width: 0;
+        }
+
+        .track-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .track-artist {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .track-duration {
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .track-actions {
+            display: flex;
+            gap: var(--space-sm);
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .track-item:hover .track-actions {
+            opacity: 1;
+        }
+
+        .track-action-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: var(--space-xs);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-base);
+            font-size: 1rem;
+        }
+
+        .track-action-btn:hover {
+            color: var(--text-primary);
+            background: var(--bg-active);
+        }
+
+        /* ============================================
+           ALBUM/RELEASE CARDS - Spotify Style
+           ============================================ */
+        .releases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .release-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            transition: all var(--transition-base);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .release-card:hover {
+            background: var(--bg-hover);
+            transform: translateY(-4px);
+        }
+
+        .release-card:hover .release-play-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .release-cover {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, var(--spotify-green) 0%, var(--accent-purple) 50%, var(--accent-pink) 100%);
+            margin-bottom: var(--space-md);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .release-play-btn {
+            position: absolute;
+            bottom: var(--space-md);
+            right: var(--space-md);
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            background: var(--spotify-green);
+            border: none;
+            color: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all var(--transition-base);
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .release-play-btn:hover {
+            background: var(--spotify-green-hover);
+            transform: translateY(0) scale(1.1);
+        }
+
+        .release-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .release-description {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* ============================================
+           DJ SESSIONS / BOOKINGS - Live Shows Style
+           ============================================ */
+        .sessions-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            margin-top: var(--space-xl);
+        }
+
+        .session-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: var(--space-lg);
+            align-items: center;
+            transition: all var(--transition-base);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .session-card:hover {
+            background: var(--bg-hover);
+            border-color: var(--spotify-green);
+            transform: translateX(4px);
+        }
+
+        .session-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: var(--space-md);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
+            min-width: 80px;
+        }
+
+        .session-day {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--spotify-green);
+        }
+
+        .session-month {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .session-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+
+        .session-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .session-details {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .session-location {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 0.875rem;
+            color: var(--text-tertiary);
+            margin-top: var(--space-xs);
+        }
+
+        .session-action {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .session-badge {
+            padding: var(--space-xs) var(--space-md);
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .session-badge.live {
+            background: rgba(236, 72, 153, 0.2);
+            color: var(--accent-pink);
+            border: 1px solid var(--accent-pink);
+        }
+
+        .session-badge.upcoming {
+            background: rgba(29, 185, 84, 0.2);
+            color: var(--spotify-green);
+            border: 1px solid var(--spotify-green);
+        }
+
+        /* ============================================
+           CONTACT FORM - Spotify Style
+           ============================================ */
+        .contact-wrapper {
+            max-width: 600px;
+            margin: var(--space-3xl) auto 0;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: var(--space-md);
+            border: 2px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9375rem;
+            border-radius: var(--radius-md);
+            transition: all var(--transition-base);
+            min-height: 48px;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-tertiary);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--spotify-green);
+            background: var(--bg-hover);
+        }
+
+        .contact-social {
+            text-align: center;
+            margin-top: var(--space-2xl);
+            padding-top: var(--space-xl);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-social p {
+            margin-bottom: var(--space-md);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color var(--transition-base);
+            text-decoration: none;
+            font-size: 0.9375rem;
+        }
+
+        .social-links a:hover {
+            color: var(--spotify-green);
+        }
+
+        .email-link {
+            color: var(--spotify-green);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: var(--space-3xl) 0 var(--space-xl);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-minimal {
+            text-align: center;
+            padding: var(--space-xl) 0;
+        }
+
+        .footer-minimal p {
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-base);
+        }
+
+        .footer-link:hover {
+            color: var(--spotify-green);
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--space-md);
+            }
+
+            .nav-content {
+                padding: 0 var(--space-md);
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-secondary);
+                flex-direction: column;
+                padding: var(--space-md);
+                border-top: 1px solid var(--border-color);
+                gap: var(--space-md);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .hero {
+                padding-top: 100px;
+                min-height: auto;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+                text-align: center;
+            }
+
+            .hero-avatar {
+                width: 150px;
+                height: 150px;
+                margin: 0 auto;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .section {
+                padding: var(--space-2xl) 0;
+            }
+
+            .releases-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: var(--space-md);
+            }
+
+            .session-card {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+
+            .session-date {
+                width: 100%;
+            }
+
+            .track-item {
+                grid-template-columns: 1fr;
+                gap: var(--space-sm);
+            }
+
+            .track-number,
+            .track-play-btn {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: var(--space-md);
+            }
+
+            .collab-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .booking-options {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+            }
+        }
+
+        /* ============================================
+           ACCESSIBILITY
+           ============================================ */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        *:focus-visible {
+            outline: 2px solid var(--spotify-green);
+            outline-offset: 2px;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--spotify-green);
+            color: var(--bg-primary);
+            padding: var(--space-sm);
+            text-decoration: none;
+            z-index: 1001;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* ============================================
+           ABOUT/BIO SECTION
+           ============================================ */
+        .section-about {
+            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+            border-radius: var(--radius-lg);
+            padding: var(--space-2xl);
+            margin: var(--space-xl) 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            align-items: start;
+        }
+
+        .about-bio h3 {
+            color: var(--spotify-green);
+            margin-bottom: var(--space-lg);
+            font-size: 1.5rem;
+        }
+
+        .about-bio p {
+            margin-bottom: var(--space-md);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .influences {
+            margin-top: var(--space-lg);
+        }
+
+        .influences h4 {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .influence-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+
+        .influence-tags span {
+            padding: var(--space-sm) var(--space-md);
+            background: var(--bg-active);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            transition: all var(--transition-base);
+        }
+
+        .influence-tags span:hover {
+            border-color: var(--spotify-green);
+            color: var(--spotify-green);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+        }
+
+        .stat-card:hover {
+            border-color: var(--spotify-green);
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--spotify-green);
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-text {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* ============================================
+           GALLERY SECTION
+           ============================================ */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            background: var(--bg-card);
+        }
+
+        .gallery-media {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--spotify-green) 0%, var(--accent-purple) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .gallery-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-base);
+        }
+
+        .gallery-item:hover .gallery-media img {
+            transform: scale(1.1);
+        }
+
+        .media-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity var(--transition-base);
+        }
+
+        .gallery-item:hover .media-overlay {
+            opacity: 1;
+        }
+
+        .media-play-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-full);
+            background: var(--spotify-green);
+            border: none;
+            color: var(--bg-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform var(--transition-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gallery-item:hover .media-play-btn {
+            transform: scale(1.15);
+        }
+
+        .media-caption {
+            padding: var(--space-md);
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: var(--bg-card);
+        }
+
+        /* ============================================
+           COLLABORATIONS SECTION
+           ============================================ */
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .collab-card {
+            background: var(--bg-card);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+        }
+
+        .collab-card:hover {
+            border-color: var(--spotify-green);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .collab-artist {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .artist-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-full);
+            background: linear-gradient(135deg, var(--spotify-green) 0%, var(--accent-purple) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .artist-info {
+            flex: 1;
+        }
+
+        .artist-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .artist-role {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .collab-track {
+            margin-bottom: var(--space-md);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .track-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+            font-size: 1rem;
+        }
+
+        .track-stats {
+            display: flex;
+            gap: var(--space-sm);
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+        }
+
+        .track-stats span {
+            background: var(--bg-hover);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .collab-link {
+            color: var(--spotify-green);
+            font-weight: 600;
+            transition: color var(--transition-base);
+            font-size: 0.875rem;
+        }
+
+        .collab-link:hover {
+            color: var(--spotify-green-hover);
+        }
+
+        /* ============================================
+           INTERVIEWS/PODCASTS SECTION
+           ============================================ */
+        .interviews-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
+        }
+
+        .interview-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+        }
+
+        .interview-card:hover {
+            border-color: var(--spotify-green);
+            transform: translateX(4px);
+        }
+
+        .interview-meta {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-md);
+        }
+
+        .interview-date,
+        .interview-duration {
+            font-size: 0.75rem;
+            color: var(--text-tertiary);
+            background: var(--bg-secondary);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .interview-content h3 {
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+        }
+
+        .interview-content p {
+            margin-bottom: var(--space-md);
+            line-height: 1.7;
+        }
+
+        .interview-listen {
+            color: var(--spotify-green);
+            font-weight: 600;
+            transition: color var(--transition-base);
+            font-size: 0.9375rem;
+        }
+
+        .interview-listen:hover {
+            color: var(--spotify-green-hover);
+        }
+
+        /* ============================================
+           BOOKING OPTIONS
+           ============================================ */
+        .booking-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-3xl);
+        }
+
+        .booking-card {
+            background: var(--bg-card);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+            cursor: pointer;
+        }
+
+        .booking-card:hover {
+            border-color: var(--spotify-green);
+            background: var(--bg-hover);
+            transform: translateY(-4px);
+        }
+
+        .booking-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .booking-card h4 {
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+            font-size: 1.125rem;
+        }
+
+        .booking-card p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ============================================
+           SOUNDCLOUD + SPOTIFY SECTION
+           ============================================ */
+        .soundcloud-wrapper {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl) var(--space-lg);
+            border: 1px solid var(--border-color);
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        #spotify-tab {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        /* TABS */
+        .platform-tabs {
+            display: flex;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: var(--space-md);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: var(--space-md) var(--space-lg);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            transition: all var(--transition-base);
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .tab-btn.active {
+            color: var(--spotify-green);
+            border-bottom-color: var(--spotify-green);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* SOUNDCLOUD */
+        .soundcloud-cta {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: var(--space-xl);
+            align-items: stretch;
+        }
+
+        .soundcloud-card {
+            background: var(--bg-secondary);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+        }
+
+        .soundcloud-card:hover {
+            border-color: var(--spotify-green);
+            transform: translateY(-2px);
+        }
+
+        .soundcloud-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .soundcloud-card h3 {
+            margin-bottom: var(--space-sm);
+            color: var(--text-primary);
+            font-size: 1.5rem;
+        }
+
+        .soundcloud-card p {
+            margin-bottom: var(--space-lg);
+            font-size: 1rem;
+        }
+
+        .soundcloud-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md);
+            background: var(--bg-active);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+        }
+
+        .highlight-item:hover {
+            border-color: var(--spotify-green);
+            background: var(--bg-hover);
+        }
+
+        .highlight-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-text {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* SPOTIFY PREVIEWS */
+        .spotify-previews {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: var(--space-md);
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .spotify-previews > div {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .spotify-previews iframe {
+            width: 100% !important;
+            max-width: 100% !important;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .preview-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-base);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .preview-card:hover {
+            border-color: var(--spotify-green);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .preview-card-cover {
+            aspect-ratio: 1;
+            width: 100%;
+            background: linear-gradient(135deg, var(--spotify-green) 0%, var(--accent-purple) 100%);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .preview-card-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .preview-card-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+            font-size: 1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .preview-card-artist {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: var(--space-md);
+        }
+
+        .preview-player {
+            width: 100%;
+            height: 40px;
+            margin-bottom: var(--space-md);
+            border-radius: var(--radius-md);
+            background: var(--bg-secondary);
+        }
+
+        .preview-player audio {
+            width: 100%;
+            height: 100%;
+        }
+
+        .preview-buttons {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        .preview-buttons a {
+            flex: 1;
+            padding: var(--space-sm);
+            background: var(--bg-hover);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            transition: all var(--transition-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .preview-buttons a:hover {
+            background: var(--spotify-green);
+            color: var(--bg-primary);
+            border-color: var(--spotify-green);
+        }
+
+        .loading-spinner {
+            text-align: center;
+            padding: var(--space-3xl);
+            color: var(--text-secondary);
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid var(--border-color);
+            border-top: 4px solid var(--spotify-green);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto var(--space-md);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            padding: var(--space-lg);
+            background: rgba(236, 72, 153, 0.1);
+            border: 1px solid var(--accent-pink);
+            border-radius: var(--radius-md);
+            color: var(--accent-pink);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Responsive SoundCloud/Spotify */
+        @media (max-width: 768px) {
+            #soundcloud .container {
+                padding: 0 var(--space-md);
+            }
+
+            .soundcloud-wrapper {
+                padding: var(--space-md);
+                margin: 0;
+                border-radius: var(--radius-lg);
+                width: 100%;
+                max-width: 100%;
+            }
+
+            #spotify-tab {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .soundcloud-cta {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+            
+            .soundcloud-highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .spotify-previews {
+                grid-template-columns: 1fr;
+                gap: 0;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                display: block;
+            }
+
+            .spotify-previews > div {
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+                overflow: hidden;
+            }
+
+            .spotify-previews iframe {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 500px !important;
+                border-radius: var(--radius-md) !important;
+                margin: 0;
+                display: block;
+            }
+
+            .spotify-previews > div > div:last-child {
+                padding: var(--space-md);
+            }
+
+            .preview-card {
+                padding: var(--space-sm);
+            }
+
+            .platform-tabs {
+                flex-direction: row;
+                gap: var(--space-sm);
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .platform-tabs::-webkit-scrollbar {
+                display: none;
+            }
+
+            .tab-btn {
+                padding: var(--space-sm) var(--space-md);
+                font-size: 0.8rem;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #soundcloud .container {
+                padding: 0 var(--space-sm);
+            }
+
+            .soundcloud-wrapper {
+                padding: var(--space-sm);
+                border-radius: var(--radius-md);
+                width: 100%;
+                max-width: 100%;
+            }
+
+            #spotify-tab {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .spotify-previews {
+                margin: 0;
+            }
+
+            .spotify-previews > div {
+                width: 100vw;
+                max-width: 100vw;
+                margin-left: calc(-1 * var(--space-sm));
+                margin-right: calc(-1 * var(--space-sm));
+            }
+
+            .spotify-previews iframe {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 450px !important;
+                border-radius: 0 !important;
+            }
+
+            .spotify-previews > div > div:last-child {
+                padding: var(--space-md) var(--space-sm);
+                margin-top: var(--space-md);
+            }
+
+            .spotify-previews .btn {
+                width: 100%;
+                padding: var(--space-sm) var(--space-md);
+                font-size: 0.75rem;
+            }
+
+            .platform-tabs {
+                margin-left: calc(-1 * var(--space-sm));
+                margin-right: calc(-1 * var(--space-sm));
+                padding-left: var(--space-sm);
+                padding-right: var(--space-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <div class="spotify-artist-id" data-artist-id="44CrAVRlYEbpintVS3jkmo" style="display: none;"></div>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Navegación principal">
+        <div class="nav-content">
+            <a href="#home" class="nav-logo" aria-label="Alejandro Gilabert - Inicio">GLA</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                ☰
+            </button>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="#about" role="menuitem">Sobre mí</a></li>
+                <li role="none"><a href="#music" role="menuitem">Música</a></li>
+                <li role="none"><a href="#projects" role="menuitem">Proyectos</a></li>
+                <li role="none"><a href="#sessions" role="menuitem">Sesiones</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Bookings</a></li>
+            </ul>
+            <div class="nav-controls">
+                <a href="index-professional.html" class="nav-switch">Profesional</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero" aria-label="Hero section">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <div class="hero-avatar">
+                        <div class="avatar-image">🎧</div>
+                        <span class="avatar-badge">LIVE NOW</span>
+                    </div>
+                    <div class="hero-info">
+                        <h1>GLA</h1>
+                        <p class="hero-subtitle">
+                            Productor, DJ y cantante especializado en música electrónica. 
+                            Madrid-based, creando sonidos globales.
+                        </p>
+                        <p class="hero-tagline">"Fusionando sonidos del futuro con ritmos globales"</p>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">50+</div>
+                                <div class="stat-label">Tracks</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">100K+</div>
+                                <div class="stat-label">Streams</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">25+</div>
+                                <div class="stat-label">Shows</div>
+                            </div>
+                        </div>
+                        <div class="cta-group">
+                            <a href="https://open.spotify.com/intl-es/artist/44CrAVRlYEbpintVS3jkmo" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="btn btn-primary">
+                                ▶ Escuchar en Spotify
+                            </a>
+                            <a href="#contact" class="btn btn-secondary">Bookings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section" aria-label="Sobre el artista">
+            <div class="container">
+                <div class="section-about fade-in">
+                    <div class="about-grid">
+                        <div class="about-bio">
+                            <h3>Mi Historia</h3>
+                            <p>
+                                Desde 2018, he estado explorando los límites de la música electrónica, 
+                                combinando sonidos experimentales con ritmos que conectan culturas. 
+                                Mi trabajo se centra en crear música que trascienda fronteras y genere emociones profundas.
+                            </p>
+                            <p>
+                                Mi sonido mezcla lo experimental con lo accesible, creando una experiencia 
+                                auditiva única que invita a la reflexión y al movimiento. Cada track es una 
+                                historia, cada set una experiencia inmersiva.
+                            </p>
+                            <div class="influences">
+                                <h4>Influencias</h4>
+                                <div class="influence-tags">
+                                    <span>Daft Punk</span>
+                                    <span>Richie Hawtin</span>
+                                    <span>Jon Hopkins</span>
+                                    <span>Caribou</span>
+                                    <span>Four Tet</span>
+                                    <span>Aphex Twin</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-stats">
+                            <div class="stat-card fade-in">
+                                <div class="stat-number">10+</div>
+                                <div class="stat-text">Años produciendo</div>
+                            </div>
+                            <div class="stat-card fade-in">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-text">Tracks publicados</div>
+                            </div>
+                            <div class="stat-card fade-in">
+                                <div class="stat-number">500K+</div>
+                                <div class="stat-text">Streams totales</div>
+                            </div>
+                            <div class="stat-card fade-in">
+                                <div class="stat-number">30+</div>
+                                <div class="stat-text">Shows en vivo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section" aria-label="Galería">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Galería</h2>
+                    <p>Momentos detrás de cámaras, conciertos en vivo y sesiones de estudio.</p>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item fade-in">
+                        <div class="gallery-media">
+                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--spotify-green) 0%, var(--accent-purple) 100%);"></div>
+                            <div class="media-overlay">
+                                <button class="media-play-btn" aria-label="Play media">▶</button>
+                            </div>
+                        </div>
+                        <div class="media-caption">Studio Session 2025</div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <div class="gallery-media">
+                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-pink) 100%);"></div>
+                            <div class="media-overlay">
+                                <button class="media-play-btn" aria-label="Play media">▶</button>
+                            </div>
+                        </div>
+                        <div class="media-caption">Concert Live @ Madrid</div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <div class="gallery-media">
+                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-cyan) 100%);"></div>
+                            <div class="media-overlay">
+                                <button class="media-play-btn" aria-label="Play media">▶</button>
+                            </div>
+                        </div>
+                        <div class="media-caption">DJ Set Event</div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <div class="gallery-media">
+                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--spotify-green) 100%);"></div>
+                            <div class="media-overlay">
+                                <button class="media-play-btn" aria-label="Play media">▶</button>
+                            </div>
+                        </div>
+                        <div class="media-caption">Behind the Scenes</div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <div class="gallery-media">
+                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-pink) 100%);"></div>
+                            <div class="media-overlay">
+                                <button class="media-play-btn" aria-label="Play media">▶</button>
+                            </div>
+                        </div>
+                        <div class="media-caption">Live Performance</div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <div class="gallery-media">
+                            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, var(--spotify-green) 0%, var(--accent-orange) 100%);"></div>
+                            <div class="media-overlay">
+                                <button class="media-play-btn" aria-label="Play media">▶</button>
+                            </div>
+                        </div>
+                        <div class="media-caption">Recording Studio</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collaborations Section -->
+        <section id="collaborations" class="section" aria-label="Colaboraciones">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Colaboraciones</h2>
+                    <p>Trabajos con otros artistas y productores talentosos.</p>
+                </div>
+                
+                <div class="collab-grid">
+                    <div class="collab-card fade-in">
+                        <div class="collab-artist">
+                            <div class="artist-avatar">👨‍🎨</div>
+                            <div class="artist-info">
+                                <div class="artist-name">María González</div>
+                                <div class="artist-role">Vocalist / Producer</div>
+                            </div>
+                        </div>
+                        <div class="collab-track">
+                            <div class="track-title">"Midnight Fusion"</div>
+                            <div class="track-stats">
+                                <span>500K streams</span>
+                                <span>Released 2024</span>
+                            </div>
+                        </div>
+                        <a href="https://open.spotify.com/intl-es/artist/44CrAVRlYEbpintVS3jkmo" target="_blank" rel="noopener noreferrer" class="collab-link">Escuchar en Spotify →</a>
+                    </div>
+                    <div class="collab-card fade-in">
+                        <div class="collab-artist">
+                            <div class="artist-avatar">🎹</div>
+                            <div class="artist-info">
+                                <div class="artist-name">Carlos Martínez</div>
+                                <div class="artist-role">Producer / Sound Designer</div>
+                            </div>
+                        </div>
+                        <div class="collab-track">
+                            <div class="track-title">"Electric Dreams Remix"</div>
+                            <div class="track-stats">
+                                <span>300K streams</span>
+                                <span>Released 2024</span>
+                            </div>
+                        </div>
+                        <a href="https://open.spotify.com/intl-es/artist/44CrAVRlYEbpintVS3jkmo" target="_blank" rel="noopener noreferrer" class="collab-link">Escuchar en Spotify →</a>
+                    </div>
+                    <div class="collab-card fade-in">
+                        <div class="collab-artist">
+                            <div class="artist-avatar">🎤</div>
+                            <div class="artist-info">
+                                <div class="artist-name">Ana Rodríguez</div>
+                                <div class="artist-role">Singer / Songwriter</div>
+                            </div>
+                        </div>
+                        <div class="collab-track">
+                            <div class="track-title">"Neon Nights"</div>
+                            <div class="track-stats">
+                                <span>250K streams</span>
+                                <span>Released 2023</span>
+                            </div>
+                        </div>
+                        <a href="https://open.spotify.com/intl-es/artist/44CrAVRlYEbpintVS3jkmo" target="_blank" rel="noopener noreferrer" class="collab-link">Escuchar en Spotify →</a>
+                    </div>
+                    <div class="collab-card fade-in">
+                        <div class="collab-artist">
+                            <div class="artist-avatar">🎧</div>
+                            <div class="artist-info">
+                                <div class="artist-name">David López</div>
+                                <div class="artist-role">DJ / Remixer</div>
+                            </div>
+                        </div>
+                        <div class="collab-track">
+                            <div class="track-title">"Synthwave Memories"</div>
+                            <div class="track-stats">
+                                <span>400K streams</span>
+                                <span>Released 2024</span>
+                            </div>
+                        </div>
+                        <a href="https://open.spotify.com/intl-es/artist/44CrAVRlYEbpintVS3jkmo" target="_blank" rel="noopener noreferrer" class="collab-link">Escuchar en Spotify →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Section - Track List -->
+        <section id="music" class="section" aria-label="Música">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Top Tracks</h2>
+                    <p>Escucha mis canciones más populares. Cada track cuenta una historia única.</p>
+                </div>
+
+                <div class="tracks-container fade-in">
+                    <div class="track-list">
+                        <div class="track-item">
+                            <span class="track-number">1</span>
+                            <button class="track-play-btn" aria-label="Play track">▶</button>
+                            <div class="track-info">
+                                <div class="track-title">Midnight Pulse</div>
+                                <div class="track-artist">Alejandro Gilabert</div>
+                            </div>
+                            <div class="track-duration">3:45</div>
+                            <div class="track-actions">
+                                <button class="track-action-btn" aria-label="Add to favorites">♡</button>
+                                <button class="track-action-btn" aria-label="More options">⋯</button>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <span class="track-number">2</span>
+                            <button class="track-play-btn" aria-label="Play track">▶</button>
+                            <div class="track-info">
+                                <div class="track-title">Electric Dreams</div>
+                                <div class="track-artist">Alejandro Gilabert</div>
+                            </div>
+                            <div class="track-duration">4:12</div>
+                            <div class="track-actions">
+                                <button class="track-action-btn" aria-label="Add to favorites">♡</button>
+                                <button class="track-action-btn" aria-label="More options">⋯</button>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <span class="track-number">3</span>
+                            <button class="track-play-btn" aria-label="Play track">▶</button>
+                            <div class="track-info">
+                                <div class="track-title">Neon Nights</div>
+                                <div class="track-artist">Alejandro Gilabert</div>
+                            </div>
+                            <div class="track-duration">3:28</div>
+                            <div class="track-actions">
+                                <button class="track-action-btn" aria-label="Add to favorites">♡</button>
+                                <button class="track-action-btn" aria-label="More options">⋯</button>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <span class="track-number">4</span>
+                            <button class="track-play-btn" aria-label="Play track">▶</button>
+                            <div class="track-info">
+                                <div class="track-title">Digital Horizon</div>
+                                <div class="track-artist">Alejandro Gilabert</div>
+                            </div>
+                            <div class="track-duration">4:35</div>
+                            <div class="track-actions">
+                                <button class="track-action-btn" aria-label="Add to favorites">♡</button>
+                                <button class="track-action-btn" aria-label="More options">⋯</button>
+                            </div>
+                        </div>
+                        <div class="track-item">
+                            <span class="track-number">5</span>
+                            <button class="track-play-btn" aria-label="Play track">▶</button>
+                            <div class="track-info">
+                                <div class="track-title">Synthwave Memories</div>
+                                <div class="track-artist">Alejandro Gilabert</div>
+                            </div>
+                            <div class="track-duration">3:52</div>
+                            <div class="track-actions">
+                                <button class="track-action-btn" aria-label="Add to favorites">♡</button>
+                                <button class="track-action-btn" aria-label="More options">⋯</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section - Releases/Albums -->
+        <section id="projects" class="section" aria-label="Proyectos y Releases">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Releases & Proyectos</h2>
+                    <p>Explora mis proyectos y releases. Cada uno representa un momento único en mi carrera musical.</p>
+                </div>
+
+                <div class="releases-grid">
+                    <div class="release-card fade-in">
+                        <div class="release-cover">
+                            <button class="release-play-btn" aria-label="Play release">▶</button>
+                        </div>
+                        <div class="release-title">Electronic Dreams EP</div>
+                        <div class="release-description">Una colección de tracks experimentales que combinan sonidos electrónicos con ritmos globales.</div>
+                    </div>
+                    <div class="release-card fade-in">
+                        <div class="release-cover">
+                            <button class="release-play-btn" aria-label="Play release">▶</button>
+                        </div>
+                        <div class="release-title">Midnight Sessions</div>
+                        <div class="release-description">Sesiones en vivo grabadas durante noches de verano en Madrid. Energía pura y espontánea.</div>
+                    </div>
+                    <div class="release-card fade-in">
+                        <div class="release-cover">
+                            <button class="release-play-btn" aria-label="Play release">▶</button>
+                        </div>
+                        <div class="release-title">Synthwave Collection</div>
+                        <div class="release-description">Homenaje a los sonidos retro-futuristas con un toque moderno y experimental.</div>
+                    </div>
+                    <div class="release-card fade-in">
+                        <div class="release-cover">
+                            <button class="release-play-btn" aria-label="Play release">▶</button>
+                        </div>
+                        <div class="release-title">Global Beats</div>
+                        <div class="release-description">Fusión de ritmos internacionales con producción electrónica de vanguardia.</div>
+                    </div>
+                    <div class="release-card fade-in">
+                        <div class="release-cover">
+                            <button class="release-play-btn" aria-label="Play release">▶</button>
+                        </div>
+                        <div class="release-title">Remix Series</div>
+                        <div class="release-description">Reinterpretaciones de tracks clásicos con mi visión única y estilo característico.</div>
+                    </div>
+                    <div class="release-card fade-in">
+                        <div class="release-cover">
+                            <button class="release-play-btn" aria-label="Play release">▶</button>
+                        </div>
+                        <div class="release-title">Live at Studio</div>
+                        <div class="release-description">Grabaciones en directo desde mi estudio, capturando la esencia de la creación en tiempo real.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SoundCloud + Spotify Section -->
+        <section id="soundcloud" class="section" aria-label="SoundCloud y Spotify">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>En SoundCloud & Spotify</h2>
+                    <p>Escucha todos mis tracks, demos y exclusivas en ambas plataformas.</p>
+                </div>
+                
+                <div class="soundcloud-wrapper fade-in">
+                    <!-- Tabs: SoundCloud | Spotify -->
+                    <div class="platform-tabs">
+                        <button class="tab-btn active" data-tab="soundcloud">
+                            🔊 SoundCloud
+                        </button>
+                        <button class="tab-btn" data-tab="spotify">
+                            🎵 Spotify Previews
+                        </button>
+                    </div>
+
+                    <!-- Tab 1: SoundCloud -->
+                    <div id="soundcloud-tab" class="tab-content active">
+                        <div class="soundcloud-cta fade-in">
+                            <div class="soundcloud-card">
+                                <div class="soundcloud-icon">🔊</div>
+                                <h3>Sígueme en SoundCloud</h3>
+                                <p>Acceso a demos, unreleased tracks y exclusivas.</p>
+                                <a href="https://soundcloud.com/alejandrogilabertmusic" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer" 
+                                   class="btn btn-primary">
+                                    Ir a SoundCloud
+                                </a>
+                            </div>
+                            <div class="soundcloud-highlights">
+                                <div class="highlight-item">
+                                    <span class="highlight-icon">⭐</span>
+                                    <span class="highlight-text">Demos exclusivos</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-icon">🔁</span>
+                                    <span class="highlight-text">Remixes únicos</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-icon">📻</span>
+                                    <span class="highlight-text">Sets en vivo</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-icon">🎧</span>
+                                    <span class="highlight-text">Unreleased tracks</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Spotify Previews (Auto-loaded) -->
+                    <div id="spotify-tab" class="tab-content" style="display: none;">
+                        <div id="spotify-previews-container" class="spotify-previews">
+                            <div class="loading-spinner">
+                                <div class="spinner"></div>
+                                <p>Cargando tus tracks de Spotify...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DJ Sessions / Bookings -->
+        <section id="sessions" class="section" aria-label="Sesiones y Bookings">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Sesiones & Bookings</h2>
+                    <p>Próximos shows, sesiones de DJ y eventos. Únete a la experiencia en vivo.</p>
+                </div>
+
+                <div class="sessions-list">
+                    <div class="session-card fade-in">
+                        <div class="session-date">
+                            <div class="session-day">15</div>
+                            <div class="session-month">Mar</div>
+                        </div>
+                        <div class="session-info">
+                            <div class="session-title">Electronic Night @ Fabrik Madrid</div>
+                            <div class="session-details">Sesión de DJ en directo con set de 2 horas. Música electrónica y house progresivo.</div>
+                            <div class="session-location">📍 Madrid, España</div>
+                        </div>
+                        <div class="session-action">
+                            <span class="session-badge upcoming">Próximamente</span>
+                        </div>
+                    </div>
+                    <div class="session-card fade-in">
+                        <div class="session-date">
+                            <div class="session-day">22</div>
+                            <div class="session-month">Mar</div>
+                        </div>
+                        <div class="session-info">
+                            <div class="session-title">Studio Session Live</div>
+                            <div class="session-details">Transmisión en vivo desde mi estudio. Creación en tiempo real y Q&A con la audiencia.</div>
+                            <div class="session-location">📍 Online / Streaming</div>
+                        </div>
+                        <div class="session-action">
+                            <span class="session-badge upcoming">Próximamente</span>
+                        </div>
+                    </div>
+                    <div class="session-card fade-in">
+                        <div class="session-date">
+                            <div class="session-day">05</div>
+                            <div class="session-month">Abr</div>
+                        </div>
+                        <div class="session-info">
+                            <div class="session-title">Summer Festival - Barcelona</div>
+                            <div class="session-details">Participación en festival de música electrónica. Set principal en el escenario principal.</div>
+                            <div class="session-location">📍 Barcelona, España</div>
+                        </div>
+                        <div class="session-action">
+                            <span class="session-badge upcoming">Próximamente</span>
+                        </div>
+                    </div>
+                    <div class="session-card fade-in">
+                        <div class="session-date">
+                            <div class="session-day">18</div>
+                            <div class="session-month">Abr</div>
+                        </div>
+                        <div class="session-info">
+                            <div class="session-title">Private Event - Corporate</div>
+                            <div class="session-details">DJ set para evento corporativo. Música ambiente y sesión personalizada.</div>
+                            <div class="session-location">📍 Madrid, España</div>
+                        </div>
+                        <div class="session-action">
+                            <span class="session-badge upcoming">Disponible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interviews/Podcasts Section -->
+        <section id="interviews" class="section" aria-label="Interviews y Podcasts">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Interviews & Podcasts</h2>
+                    <p>Conversaciones sobre mi música, proceso creativo y visión artística.</p>
+                </div>
+                
+                <div class="interviews-list">
+                    <div class="interview-card fade-in">
+                        <div class="interview-meta">
+                            <span class="interview-date">15 Mar 2025</span>
+                            <span class="interview-duration">45 min</span>
+                        </div>
+                        <div class="interview-content">
+                            <h3>Mi Proceso Creativo - Podcast XYZ</h3>
+                            <p>Una conversación profunda sobre cómo creo mis tracks, mis inspiraciones y el futuro de la música electrónica. Exploramos el proceso desde la idea inicial hasta la producción final.</p>
+                            <a href="#" class="interview-listen">Escuchar →</a>
+                        </div>
+                    </div>
+                    <div class="interview-card fade-in">
+                        <div class="interview-meta">
+                            <span class="interview-date">22 Mar 2025</span>
+                            <span class="interview-duration">60 min</span>
+                        </div>
+                        <div class="interview-content">
+                            <h3>El Futuro de la Electrónica</h3>
+                            <p>Discussion con otros productores sobre las tendencias actuales, tecnología en la música y cómo la IA está transformando la industria musical.</p>
+                            <a href="#" class="interview-listen">Escuchar →</a>
+                        </div>
+                    </div>
+                    <div class="interview-card fade-in">
+                        <div class="interview-meta">
+                            <span class="interview-date">10 Abr 2025</span>
+                            <span class="interview-duration">30 min</span>
+                        </div>
+                        <div class="interview-content">
+                            <h3>Behind the Scenes: Studio Life</h3>
+                            <p>Un vistazo íntimo a mi rutina diaria en el estudio, herramientas favoritas y técnicas de producción que uso en mis tracks.</p>
+                            <a href="#" class="interview-listen">Escuchar →</a>
+                        </div>
+                    </div>
+                    <div class="interview-card fade-in">
+                        <div class="interview-meta">
+                            <span class="interview-date">28 Abr 2025</span>
+                            <span class="interview-duration">50 min</span>
+                        </div>
+                        <div class="interview-content">
+                            <h3>Colaboraciones y Networking en la Música</h3>
+                            <p>Hablamos sobre la importancia de las colaboraciones, cómo conecto con otros artistas y proyectos futuros en los que estoy trabajando.</p>
+                            <a href="#" class="interview-listen">Escuchar →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section" aria-label="Contacto y Bookings">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: var(--space-2xl);" class="fade-in">
+                    <h2>Bookings & Colaboraciones</h2>
+                    <p style="font-size: 1rem;">Para bookings, colaboraciones o cualquier consulta. Te respondo en 24h.</p>
+                </div>
+
+                <div class="booking-options fade-in">
+                    <div class="booking-card">
+                        <div class="booking-icon">🎤</div>
+                        <h4>Sesión DJ</h4>
+                        <p>Disponible para DJ sets en eventos, festivales y clubes. Sets personalizados según el ambiente y la audiencia.</p>
+                    </div>
+                    <div class="booking-card">
+                        <div class="booking-icon">🎵</div>
+                        <h4>Colaboración Remixes</h4>
+                        <p>Interesado en remix y producción colaborativa. Trabajemos juntos en crear algo único y memorable.</p>
+                    </div>
+                    <div class="booking-card">
+                        <div class="booking-icon">🎧</div>
+                        <h4>Consultoría Sonic</h4>
+                        <p>Asesoramiento en dirección artística, producción y sonido. Compartamos conocimiento y experiencia.</p>
+                    </div>
+                </div>
+
+                <div class="contact-wrapper">
+                    <form id="contact-form" aria-label="Formulario de contacto">
+                        <div class="form-group fade-in">
+                            <label for="name">Nombre *</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                required 
+                                aria-required="true"
+                                autocomplete="name"
+                                placeholder="Tu nombre">
+                        </div>
+                        <div class="form-group fade-in">
+                            <label for="email">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required 
+                                aria-required="true"
+                                autocomplete="email"
+                                placeholder="tu@email.com">
+                        </div>
+                        <div class="form-group fade-in">
+                            <label for="message">Mensaje *</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                rows="6" 
+                                placeholder="Cuéntame sobre tu evento, colaboración o proyecto..." 
+                                required
+                                aria-required="true"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary fade-in" style="width: 100%;">
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-social fade-in">
+                    <p>
+                        <a href="mailto:alejandro97gilabert@gmail.com" class="email-link">
+                            alejandro97gilabert@gmail.com
+                        </a>
+                    </p>
+                    <div class="social-links">
+                        <a href="https://open.spotify.com/intl-es/artist/44CrAVRlYEbpintVS3jkmo" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Spotify">
+                            Spotify
+                        </a>
+                        <a href="https://www.instagram.com/tu_usuario" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Instagram">
+                            Instagram
+                        </a>
+                        <a href="https://twitter.com/tu_usuario" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Twitter">
+                            Twitter
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-minimal">
+                <p>&copy; 2025 Alejandro Gilabert</p>
+                <p>
+                    <a href="index-professional.html" class="footer-link">Ver perfil profesional</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth Scroll & Active Nav
+        (function() {
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            const sections = document.querySelectorAll('section[id]');
+            
+            function updateActiveNav() {
+                let current = '';
+                const scrollY = window.pageYOffset;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', updateActiveNav);
+            updateActiveNav();
+        })();
+
+        // Fade-in Animations
+        (function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        })();
+
+        // Mobile Menu Toggle
+        (function() {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    navMenu.classList.toggle('active');
+                });
+                
+                navMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+        })();
+
+        // Track Play Functionality
+        (function() {
+            const playButtons = document.querySelectorAll('.track-play-btn, .release-play-btn');
+            
+            playButtons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const isPlaying = this.textContent === '⏸';
+                    
+                    if (isPlaying) {
+                        this.textContent = '▶';
+                        this.style.background = 'var(--spotify-green)';
+                    } else {
+                        // Stop all other tracks
+                        playButtons.forEach(b => {
+                            b.textContent = '▶';
+                            b.style.background = 'var(--spotify-green)';
+                        });
+                        
+                        this.textContent = '⏸';
+                        this.style.background = 'var(--accent-pink)';
+                    }
+                });
+            });
+        })();
+
+        // Form Validation & Submission
+        (function() {
+            const form = document.getElementById('contact-form');
+            
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData);
+                    
+                    if (!data.name || !data.email || !data.message) {
+                        alert('Por favor, completa todos los campos requeridos.');
+                        return;
+                    }
+                    
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(data.email)) {
+                        alert('Por favor, ingresa un email válido.');
+                        return;
+                    }
+                    
+                    console.log('Form data:', data);
+                    alert('¡Gracias por tu mensaje! Te responderé en 24h.');
+                    form.reset();
+                });
+            }
+        })();
+
+        // Accessibility
+        (function() {
+            document.querySelectorAll('a, button').forEach(el => {
+                if (!el.hasAttribute('tabindex') && el.getAttribute('tabindex') !== '-1') {
+                    el.setAttribute('tabindex', '0');
+                }
+            });
+        })();
+    </script>
+
+    <!-- Spotify Preview Automation Script -->
+    <script>
+    (function() {
+        'use strict';
+        
+        // ============================================
+        // CONFIGURACIÓN
+        // ============================================
+        const ARTIST_ID = '44CrAVRlYEbpintVS3jkmo';
+        const COUNTRY_CODE = 'ES';
+        const TRACKS_LIMIT = 12;
+        
+        // ============================================
+        // TAB SWITCHING
+        // ============================================
+        function initTabs() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabName = btn.getAttribute('data-tab');
+                    
+                    // Desactivar todos
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(t => {
+                        t.classList.remove('active');
+                        t.style.display = 'none';
+                    });
+                    
+                    // Activar seleccionado
+                    btn.classList.add('active');
+                    const targetTab = document.getElementById(`${tabName}-tab`);
+                    if (targetTab) {
+                        targetTab.classList.add('active');
+                        targetTab.style.display = 'block';
+                        targetTab.style.width = '100%';
+                        targetTab.style.maxWidth = '100%';
+                    }
+                    
+                    // Si es Spotify tab, cargar si no está cargado
+                    if (tabName === 'spotify') {
+                        const container = document.getElementById('spotify-previews-container');
+                        if (container && container.querySelector('.loading-spinner')) {
+                            loadSpotifyPreviews(container);
+                        }
+                    }
+                });
+            });
+        }
+        
+        // ============================================
+        // CARGAR PREVIEWS DE SPOTIFY
+        // ============================================
+        function loadSpotifyPreviews(container) {
+            // Usar widget embebido de Spotify (no requiere autenticación)
+            const updateIframe = () => {
+                const isMobile = window.innerWidth <= 480;
+                const isTablet = window.innerWidth <= 768 && window.innerWidth > 480;
+                let iframeHeight = '600';
+                let iframeStyle = 'border-radius: 12px;';
+                
+                if (isMobile) {
+                    iframeHeight = '450';
+                    iframeStyle = 'border-radius: 0;';
+                } else if (isTablet) {
+                    iframeHeight = '500';
+                    iframeStyle = 'border-radius: var(--radius-md);';
+                }
+                
+                const buttonWidth = isMobile ? '100%' : 'auto';
+                
+                container.innerHTML = `
+                    <div style="width: 100%; max-width: 100%; min-width: 0; margin: 0 auto; overflow: hidden; display: block;">
+                        <iframe 
+                            style="${iframeStyle} width: 100%; max-width: 100%; min-width: 0; height: ${iframeHeight}px; border: none; display: block; margin: 0 auto;" 
+                            src="https://open.spotify.com/embed/artist/${ARTIST_ID}?utm_source=generator&theme=0" 
+                            width="100%" 
+                            height="${iframeHeight}" 
+                            frameBorder="0" 
+                            allowfullscreen="" 
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                            loading="lazy">
+                        </iframe>
+                        <div style="margin-top: var(--space-lg); text-align: center; padding: 0 var(--space-md); width: 100%; max-width: 100%;">
+                            <a href="https://open.spotify.com/intl-es/artist/${ARTIST_ID}" 
+                               target="_blank" 
+                               rel="noopener noreferrer" 
+                               class="btn btn-primary" 
+                               style="display: inline-block; width: ${buttonWidth};">
+                                🎵 Ver perfil completo en Spotify
+                            </a>
+                        </div>
+                    </div>
+                `;
+            };
+            
+            updateIframe();
+            
+            // Actualizar si cambia el tamaño de ventana
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    if (container.querySelector('iframe')) {
+                        updateIframe();
+                    }
+                }, 250);
+            });
+        }
+        
+        // ============================================
+        // UTILIDADES
+        // ============================================
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // ============================================
+        // INICIALIZACIÓN
+        // ============================================
+        document.addEventListener('DOMContentLoaded', () => {
+            initTabs();
+        });
+        
+        // Por si el script carga después del DOM
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initTabs);
+        } else {
+            initTabs();
+        }
+    })();
+    </script>
+</body>
+</html>
