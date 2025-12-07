@@ -42,22 +42,47 @@ make remote URL="https://github.com/gilatronico/Landing_personal.git"
 # Ver el estado del repositorio
 make status
 
-# Agregar todos los archivos al staging
-make add
+# Ver cambios pendientes antes de commit
+make changes
 
-# Hacer commit (requiere mensaje)
-make commit M="Tu mensaje de commit"
+# Despliegue rápido (mensaje interactivo)
+make quick-deploy
 
-# Subir cambios a GitHub
-make push
-
-# Todo en uno: add + commit + push
+# Despliegue completo (requiere mensaje)
 make deploy M="Tu mensaje de commit"
+
+# O usar el script bash
+./deploy.sh "Tu mensaje de commit"
+./deploy.sh  # Modo interactivo
+
+# Comandos individuales
+make add
+make commit M="Tu mensaje de commit"
+make push
+```
+
+#### Comandos para Vercel
+
+```bash
+# Ver información sobre Vercel
+make vercel-info
+
+# Desplegar a GitHub (Vercel se actualiza automáticamente)
+make vercel-deploy M="Tu mensaje"
+
+# Enlazar proyecto con Vercel CLI (opcional)
+make vercel-link
+
+# Desplegar a producción con Vercel CLI
+make vercel-prod M="Tu mensaje"
 ```
 
 #### Otros Comandos Útiles
 
 ```bash
+# Sincronizar: descargar y subir cambios
+make sync
+
 # Descargar últimos cambios
 make pull
 
@@ -97,8 +122,14 @@ make clean
 ### Trabajo diario
 
 ```bash
-# Después de hacer cambios
+# Opción 1: Despliegue rápido (interactivo)
+make quick-deploy
+
+# Opción 2: Despliegue con mensaje
 make deploy M="Descripción de los cambios"
+
+# Opción 3: Usar script bash
+./deploy.sh "Descripción de los cambios"
 ```
 
 ## ⚙️ Configuración
@@ -127,14 +158,40 @@ make remote URL="https://github.com/gilatronico/Landing_personal.git"
 make deploy M="Initial commit: Landing page completa"
 ```
 
-### Ejemplo 2: Actualización diaria
+### Ejemplo 2: Actualización diaria (más rápido)
 
 ```bash
-# Después de hacer cambios en los archivos
+# Opción A: Despliegue interactivo
+make quick-deploy
+
+# Opción B: Con mensaje directo
 make deploy M="Mejoras en hero section y animaciones"
+
+# Opción C: Con script bash
+./deploy.sh "Mejoras en hero section y animaciones"
 ```
 
-### Ejemplo 3: Solo commit sin push
+### Ejemplo 3: Verificar cambios antes de commit
+
+```bash
+# Ver qué archivos cambiaron
+make changes
+
+# Si todo está bien, desplegar
+make deploy M="Descripción de cambios"
+```
+
+### Ejemplo 4: Desplegar a Vercel
+
+```bash
+# Ver información sobre Vercel
+make vercel-info
+
+# Desplegar (Vercel se actualiza automáticamente)
+make vercel-deploy M="Nuevas features"
+```
+
+### Ejemplo 5: Solo commit sin push
 
 ```bash
 make add

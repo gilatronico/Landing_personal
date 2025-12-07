@@ -1,4 +1,4 @@
-.PHONY: help init setup push commit status clean deploy
+.PHONY: help init setup push commit status clean deploy vercel-deploy vercel-info
 
 # Variables
 GIT_REMOTE ?= origin
@@ -82,6 +82,10 @@ commit: ## Hace commit de los cambios (usa: make commit M="mensaje")
 		echo "Uso: make commit M=\"tu mensaje de commit\""; \
 		exit 1; \
 	fi
+	@if [ -z "$$(git status -s)" ]; then \
+		echo "$(YELLOW)⚠ No hay cambios para commitear$(NC)"; \
+		exit 0; \
+	fi
 	@echo "$(GREEN)Haciendo commit...$(NC)"
 	@git commit -m "$(M)"
 	@echo "$(GREEN)✓ Commit realizado$(NC)"
@@ -97,8 +101,53 @@ push: ## Sube los cambios a GitHub
 	@git push -u $(GIT_REMOTE) $(GIT_BRANCH)
 	@echo "$(GREEN)✓ Cambios subidos a GitHub$(NC)"
 
-deploy: add commit push ## Agrega, hace commit y push (usa: make deploy M="mensaje")
+deploy: ## Agrega, hace commit y push (usa: make deploy M="mensaje")
+	@if [ -z "$(M)" ]; then \
+		echo "$(RED)Error: Debes proporcionar un mensaje de commit$(NC)"; \
+		echo "Uso: make deploy M=\"tu mensaje de commit\""; \
+		echo "O usa: make quick-deploy (para mensaje interactivo)"; \
+		exit 1; \
+	fi
+	@if [ -z "$$(git status -s)" ]; then \
+		echo "$(YELLOW)⚠ No hay cambios para commitear$(NC)"; \
+		exit 0; \
+	fi
+	@echo "$(GREEN)Agregando archivos...$(NC)"
+	@git add .
+	@echo "$(GREEN)Haciendo commit...$(NC)"
+	@git commit -m "$(M)"
+	@echo "$(GREEN)Subiendo a GitHub...$(NC)"
+	@git push $(GIT_REMOTE) $(GIT_BRANCH)
 	@echo "$(GREEN)✓ Despliegue completado$(NC)"
+
+quick-deploy: ## Despliegue rápido con mensaje interactivo (usa: make quick-deploy)
+	@echo "$(GREEN)=== Despliegue Rápido ===$(NC)"
+	@echo "$(YELLOW)Archivos modificados:$(NC)"
+	@git status -s || true
+	@echo ""
+	@read -p "Mensaje de commit: " msg; \
+	if [ -z "$$msg" ]; then \
+		echo "$(RED)Error: El mensaje no puede estar vacío$(NC)"; \
+		exit 1; \
+	fi; \
+	echo "$(GREEN)Agregando archivos...$(NC)"; \
+	git add .; \
+	echo "$(GREEN)Haciendo commit...$(NC)"; \
+	git commit -m "$$msg"; \
+	echo "$(GREEN)Subiendo a GitHub...$(NC)"; \
+	git push $(GIT_REMOTE) $(GIT_BRANCH); \
+	echo "$(GREEN)✓ Despliegue completado$(NC)"
+
+sync: pull push ## Sincroniza: descarga cambios y luego sube (usa: make sync)
+	@echo "$(GREEN)✓ Sincronización completada$(NC)"
+
+changes: ## Muestra los cambios pendientes antes de commit
+	@echo "$(GREEN)=== Cambios Pendientes ===$(NC)"
+	@echo "$(YELLOW)Archivos modificados:$(NC)"
+	@git status -s || echo "No hay cambios"
+	@echo ""
+	@echo "$(YELLOW)Diferencias:$(NC)"
+	@git diff --stat || echo "No hay diferencias"
 
 remote: ## Configura el remote de GitHub (usa: make remote URL="https://github.com/user/repo.git")
 	@if [ -z "$(URL)" ]; then \
@@ -150,3 +199,52 @@ info: ## Muestra información del repositorio
 	@echo "Remote: $(shell git remote get-url $(GIT_REMOTE) 2>/dev/null || echo 'No configurado')"
 	@echo "Último commit: $(shell git log -1 --format='%h - %s' 2>/dev/null || echo 'N/A')"
 	@echo "Archivos rastreados: $(shell git ls-files | wc -l | tr -d ' ')"
+	@echo "Commits pendientes de push: $(shell git rev-list --count $(GIT_REMOTE)/$(GIT_BRANCH)..HEAD 2>/dev/null || echo '0')"
+
+vercel-deploy: deploy ## Despliega a GitHub (Vercel se actualiza automáticamente)
+	@echo "$(GREEN)✓ Cambios subidos a GitHub$(NC)"
+	@echo "$(YELLOW)ℹ Vercel detectará automáticamente los cambios y desplegará$(NC)"
+	@echo "$(YELLOW)   Visita: https://vercel.com/dashboard$(NC)"
+
+vercel-info: ## Muestra información sobre el despliegue en Vercel
+	@echo "$(GREEN)=== Información Vercel ===$(NC)"
+	@echo "Repositorio: https://github.com/$(GITHUB_USER)/$(REPO_NAME)"
+	@echo ""
+	@echo "$(YELLOW)Para conectar con Vercel:$(NC)"
+	@echo "1. Ve a https://vercel.com/new"
+	@echo "2. Importa el repositorio: $(GITHUB_USER)/$(REPO_NAME)"
+	@echo "3. Vercel detectará automáticamente los archivos HTML"
+	@echo "4. Configura:"
+	@echo "   - Framework Preset: Other"
+	@echo "   - Build Command: (dejar vacío)"
+	@echo "   - Output Directory: ."
+	@echo "5. Cada push a GitHub desplegará automáticamente"
+	@echo ""
+	@if command -v vercel &> /dev/null; then \
+		echo "$(GREEN)✓ Vercel CLI está instalado$(NC)"; \
+		vercel --version; \
+	else \
+		echo "$(YELLOW)ℹ Vercel CLI no está instalado (opcional)$(NC)"; \
+		echo "   Instala con: npm i -g vercel"; \
+	fi
+
+vercel-link: ## Enlaza el proyecto con Vercel (requiere Vercel CLI)
+	@if ! command -v vercel &> /dev/null; then \
+		echo "$(RED)Error: Vercel CLI no está instalado$(NC)"; \
+		echo "Instala con: npm i -g vercel"; \
+		exit 1; \
+	fi
+	@echo "$(GREEN)Enlazando proyecto con Vercel...$(NC)"
+	@vercel link
+	@echo "$(GREEN)✓ Proyecto enlazado$(NC)"
+
+vercel-prod: deploy ## Despliega a producción en Vercel (requiere Vercel CLI)
+	@if ! command -v vercel &> /dev/null; then \
+		echo "$(YELLOW)⚠ Vercel CLI no está instalado$(NC)"; \
+		echo "$(YELLOW)   Los cambios se subieron a GitHub$(NC)"; \
+		echo "$(YELLOW)   Vercel se actualizará automáticamente si está conectado$(NC)"; \
+		exit 0; \
+	fi
+	@echo "$(GREEN)Desplegando a producción en Vercel...$(NC)"
+	@vercel --prod
+	@echo "$(GREEN)✓ Despliegue a producción completado$(NC)"

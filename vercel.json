@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index_generic.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "index-artist.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "index-professional.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/index_generic.html"
+    },
+    {
+      "src": "/artist",
+      "dest": "/index-artist.html"
+    },
+    {
+      "src": "/professional",
+      "dest": "/index-professional.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
