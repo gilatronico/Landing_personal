@@ -665,140 +665,84 @@
         }
 
         .service-card {
-            padding: 0;
             background: var(--white);
-            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            border-radius: 8px;
+            border: none;
+            border-top: 6px solid;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
             transition: all var(--transition-base);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border-light);
             display: flex;
             flex-direction: column;
             height: 100%;
-            overflow: hidden;
-            min-height: 280px;
         }
 
+        /* Colores específicos por institución */
+        .cedeu-card {
+            border-top-color: #003366;
+        }
+
+        .santander-card {
+            border-top-color: #EC0000;
+        }
+
+        .medusa-card {
+            border-top-color: #8B5CF6;
+        }
+
+        /* Hover Effects */
         .service-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
             transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent-primary);
         }
 
-        .card-image {
-            height: 120px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            padding: var(--space-md);
-            position: relative;
+        .cedeu-card:hover {
+            border-top-width: 8px;
         }
 
-        .card-image img {
-            max-width: 80px;
-            max-height: 80px;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            object-position: center;
-            transition: all 0.3s ease;
-            opacity: 0.95;
-            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
+        .santander-card:hover {
+            border-top-width: 8px;
         }
 
-        .service-card:hover .card-image img {
-            transform: scale(1.15) translateY(-2px);
-            opacity: 1;
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+        .medusa-card:hover {
+            border-top-width: 8px;
         }
 
-        .card-image-initials {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--white);
-            letter-spacing: 0.05em;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-            z-index: 2;
-            display: none;
-        }
-
-        .card-image-icon {
-            font-size: 2.5rem;
-            opacity: 0.9;
-            display: none;
-        }
-
-        /* Mostrar iniciales solo si no hay imagen */
-        .card-image:not(:has(img)) .card-image-initials,
-        .card-image:not(:has(img)) .card-image-icon {
-            display: block;
-        }
-
-        .card-image.cedeu {
-            background: linear-gradient(135deg, #003366 0%, #004d99 100%);
-        }
-
-        .card-image.santander {
-            background: linear-gradient(135deg, #EC0000 0%, #CC0000 100%);
-        }
-
-        .card-image.medusa {
-            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
-        }
-
-        .card-content {
-            padding: var(--space-lg);
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-sm);
-        }
-
+        /* Typography adjustments */
         .service-card h3 {
-            margin-bottom: var(--space-xs);
+            margin-top: 0;
+            margin-bottom: var(--space-md);
             color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
         }
 
+        .service-card p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        /* Dark mode adjustments */
         .section-dark .service-card {
             background: rgba(255, 255, 255, 0.05);
             color: var(--white);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 6px solid;
         }
 
         .section-dark .service-card:hover {
             background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .section-dark .card-image {
-            border-bottom-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .section-dark .card-image {
-            border-bottom-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .section-dark .card-image.cedeu {
-            background: linear-gradient(135deg, rgba(0, 51, 102, 0.9) 0%, rgba(0, 77, 153, 0.9) 100%);
-        }
-
-        .section-dark .card-image.santander {
-            background: linear-gradient(135deg, rgba(236, 0, 0, 0.9) 0%, rgba(204, 0, 0, 0.9) 100%);
-        }
-
-        .section-dark .card-image.medusa {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.9) 0%, rgba(124, 58, 237, 0.9) 100%);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         .section-dark .service-card h3 {
             color: var(--white);
         }
 
-        .service-card p {
-            font-size: 0.95rem;
-            line-height: 1.7;
+        .section-dark .service-card p {
+            color: rgba(255, 255, 255, 0.8);
         }
 
         /* ============================================
@@ -1721,26 +1665,17 @@
             }
 
             .service-card {
-                min-height: auto;
+                padding: var(--space-lg);
             }
 
-            .card-image {
-                height: 100px;
-                padding: var(--space-sm);
+            .service-card h3 {
+                font-size: 1.1rem;
             }
 
-            .card-image img {
-                max-width: 70px;
-                max-height: 70px;
+            .service-card p {
+                font-size: 0.9rem;
             }
 
-            .card-image-initials {
-                font-size: 2.5rem;
-            }
-
-            .card-image-icon {
-                font-size: 2rem;
-            }
 
             .section {
                 padding: var(--space-2xl) 0;
@@ -1789,26 +1724,16 @@
                 aspect-ratio: 1 / 1;
             }
 
-            .card-image {
-                height: 90px;
-                padding: var(--space-xs);
-            }
-
-            .card-image img {
-                max-width: 60px;
-                max-height: 60px;
-            }
-
-            .card-image-initials {
-                font-size: 2rem;
-            }
-
-            .card-image-icon {
-                font-size: 1.75rem;
-            }
-
-            .card-content {
+            .service-card {
                 padding: var(--space-md);
+            }
+
+            .service-card h3 {
+                font-size: 1rem;
+            }
+
+            .service-card p {
+                font-size: 0.85rem;
             }
         }
 
@@ -2267,44 +2192,22 @@
                 </div>
 
                 <div class="services-grid">
-                    <div class="service-card fade-in">
-                        <div class="card-image cedeu">
-                            <img src="images/teaching/cedeu-logo.png" 
-                                 alt="Logo CEDEU" 
-                                 loading="lazy"
-                                 onerror="this.style.display='none'; this.parentElement.querySelector('.card-image-initials').style.display='block';">
-                            <div class="card-image-initials">C</div>
-                        </div>
-                        <div class="card-content">
-                            <h3>CEDEU</h3>
-                            <p>Digital Assets, Blockchain, Product Management y APIs. Proyectos aplicados.</p>
-                        </div>
+                    <!-- Card 1 -->
+                    <div class="service-card cedeu-card fade-in">
+                        <h3>CEDEU</h3>
+                        <p>Digital Assets, Blockchain, Product Management y APIs. Proyectos aplicados.</p>
                     </div>
-                    <div class="service-card fade-in">
-                        <div class="card-image santander">
-                            <img src="images/teaching/santander-logo.png" 
-                                 alt="Logo Santander Financial Innovation" 
-                                 loading="lazy"
-                                 onerror="this.style.display='none'; this.parentElement.querySelector('.card-image-initials').style.display='block';">
-                            <div class="card-image-initials">SFI</div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Santander FI (BME)</h3>
-                            <p>Formación profesional en Product, Web3 y Crypto para profesionales del mercado.</p>
-                        </div>
+
+                    <!-- Card 2 -->
+                    <div class="service-card santander-card fade-in">
+                        <h3>Santander FI (BME)</h3>
+                        <p>Formación profesional en Product, Web3 y Crypto para profesionales del mercado.</p>
                     </div>
-                    <div class="service-card fade-in">
-                        <div class="card-image medusa">
-                            <img src="images/teaching/medusa-logo.png" 
-                                 alt="Logo Medusa Capital" 
-                                 loading="lazy"
-                                 onerror="this.style.display='none'; this.parentElement.querySelector('.card-image-icon').style.display='block';">
-                            <div class="card-image-icon">🔗</div>
-                        </div>
-                        <div class="card-content">
-                            <h3>Medusa Capital</h3>
-                            <p>Blockchain y Digital Assets. Formación profesional para equipos.</p>
-                        </div>
+
+                    <!-- Card 3 -->
+                    <div class="service-card medusa-card fade-in">
+                        <h3>Medusa Capital</h3>
+                        <p>Blockchain y Digital Assets. Formación profesional para equipos.</p>
                     </div>
                 </div>
 
