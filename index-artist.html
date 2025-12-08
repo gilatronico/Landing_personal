@@ -1504,81 +1504,60 @@
         }
 
         /* ============================================
-           SOUNDCLOUD + SPOTIFY SECTION
+           SOUNDCLOUD + SPOTIFY + YOUTUBE SECTION
            ============================================ */
-        .soundcloud-wrapper {
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .platform-column {
             background: var(--bg-secondary);
             border-radius: var(--radius-lg);
-            padding: var(--space-xl) var(--space-lg);
+            padding: var(--space-xl);
             border: 1px solid var(--border-color);
-            width: 100%;
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-
-        #spotify-tab {
-            width: 100%;
-            max-width: 100%;
-            overflow: hidden;
-        }
-
-        /* TABS */
-        .platform-tabs {
             display: flex;
-            gap: var(--space-lg);
+            flex-direction: column;
+        }
+
+        .platform-header {
             margin-bottom: var(--space-lg);
-            border-bottom: 1px solid var(--border-color);
             padding-bottom: var(--space-md);
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .tab-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-secondary);
-            padding: var(--space-md) var(--space-lg);
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9375rem;
-            transition: all var(--transition-base);
-            border-bottom: 2px solid transparent;
-            margin-bottom: -1px;
-        }
-
-        .tab-btn:hover {
+        .platform-header h3 {
             color: var(--text-primary);
+            font-size: 1.5rem;
+            margin: 0;
+            font-weight: 600;
         }
 
-        .tab-btn.active {
+        .platform-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .spotify-column .platform-header h3 {
             color: var(--spotify-green);
-            border-bottom-color: var(--spotify-green);
         }
 
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.3s ease;
-            width: 100%;
-            max-width: 100%;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .soundcloud-column .platform-header h3 {
+            color: #ff5500;
         }
 
         /* SOUNDCLOUD */
         .soundcloud-cta {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: var(--space-xl);
-            align-items: stretch;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
         }
 
         .soundcloud-card {
-            background: var(--bg-secondary);
+            background: var(--bg-card);
             padding: var(--space-lg);
             border-radius: var(--radius-lg);
             text-align: center;
@@ -1587,7 +1566,7 @@
         }
 
         .soundcloud-card:hover {
-            border-color: var(--spotify-green);
+            border-color: #ff5500;
             transform: translateY(-2px);
         }
 
@@ -1596,15 +1575,16 @@
             margin-bottom: var(--space-md);
         }
 
-        .soundcloud-card h3 {
+        .soundcloud-card h4 {
             margin-bottom: var(--space-sm);
             color: var(--text-primary);
-            font-size: 1.5rem;
+            font-size: 1.25rem;
         }
 
         .soundcloud-card p {
             margin-bottom: var(--space-lg);
-            font-size: 1rem;
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
         }
 
         .soundcloud-highlights {
@@ -1642,9 +1622,6 @@
 
         /* SPOTIFY PREVIEWS */
         .spotify-previews {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: var(--space-md);
             width: 100%;
             overflow: hidden;
         }
@@ -1660,6 +1637,52 @@
             max-width: 100% !important;
             border-radius: 12px;
             display: block;
+        }
+
+        /* YOUTUBE SECTION */
+        .youtube-section {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            border: 1px solid var(--border-color);
+            margin-top: var(--space-2xl);
+        }
+
+        .youtube-section .platform-header h3 {
+            color: #ff0000;
+        }
+
+        .youtube-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-lg);
+        }
+
+        .youtube-video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: var(--radius-md);
+            background: var(--bg-card);
+        }
+
+        .youtube-video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: var(--radius-md);
+        }
+
+        .youtube-placeholder {
+            text-align: center;
+            padding: var(--space-xl);
+            color: var(--text-secondary);
+            grid-column: 1 / -1;
         }
 
         .preview-card {
@@ -1794,139 +1817,46 @@
             font-weight: 500;
         }
 
-        /* Responsive SoundCloud/Spotify */
+        /* Responsive Platforms Section */
         @media (max-width: 768px) {
-            #soundcloud .container {
-                padding: 0 var(--space-md);
-            }
-
-            .soundcloud-wrapper {
-                padding: var(--space-md);
-                margin: 0;
-                border-radius: var(--radius-lg);
-                width: 100%;
-                max-width: 100%;
-            }
-
-            #spotify-tab {
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .soundcloud-cta {
+            .platforms-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-lg);
+                gap: var(--space-xl);
             }
-            
+
+            .platform-column {
+                padding: var(--space-lg);
+            }
+
             .soundcloud-highlights {
                 grid-template-columns: 1fr;
             }
 
-            .spotify-previews {
-                grid-template-columns: 1fr;
-                gap: 0;
-                width: 100%;
-                margin: 0;
-                padding: 0;
-                display: block;
-            }
-
-            .spotify-previews > div {
-                width: 100%;
-                max-width: 100%;
-                padding: 0;
-                margin: 0;
-                overflow: hidden;
-            }
-
             .spotify-previews iframe {
-                width: 100% !important;
-                max-width: 100% !important;
                 height: 500px !important;
-                border-radius: var(--radius-md) !important;
-                margin: 0;
-                display: block;
             }
 
-            .spotify-previews > div > div:last-child {
-                padding: var(--space-md);
-            }
-
-            .preview-card {
-                padding: var(--space-sm);
-            }
-
-            .platform-tabs {
-                flex-direction: row;
-                gap: var(--space-sm);
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-            }
-
-            .platform-tabs::-webkit-scrollbar {
-                display: none;
-            }
-
-            .tab-btn {
-                padding: var(--space-sm) var(--space-md);
-                font-size: 0.8rem;
-                white-space: nowrap;
-                flex-shrink: 0;
+            .youtube-container {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 480px) {
-            #soundcloud .container {
-                padding: 0 var(--space-sm);
+            .platform-column {
+                padding: var(--space-md);
             }
 
-            .soundcloud-wrapper {
-                padding: var(--space-sm);
-                border-radius: var(--radius-md);
-                width: 100%;
-                max-width: 100%;
-            }
-
-            #spotify-tab {
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .spotify-previews {
-                margin: 0;
-            }
-
-            .spotify-previews > div {
-                width: 100vw;
-                max-width: 100vw;
-                margin-left: calc(-1 * var(--space-sm));
-                margin-right: calc(-1 * var(--space-sm));
+            .platform-header h3 {
+                font-size: 1.25rem;
             }
 
             .spotify-previews iframe {
-                width: 100% !important;
-                max-width: 100% !important;
                 height: 450px !important;
-                border-radius: 0 !important;
             }
 
-            .spotify-previews > div > div:last-child {
-                padding: var(--space-md) var(--space-sm);
-                margin-top: var(--space-md);
-            }
-
-            .spotify-previews .btn {
-                width: 100%;
-                padding: var(--space-sm) var(--space-md);
-                font-size: 0.75rem;
-            }
-
-            .platform-tabs {
-                margin-left: calc(-1 * var(--space-sm));
-                margin-right: calc(-1 * var(--space-sm));
-                padding-left: var(--space-sm);
-                padding-right: var(--space-sm);
+            .youtube-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
             }
         }
     </style>
@@ -2046,6 +1976,112 @@
                                 <div class="stat-number">30+</div>
                                 <div class="stat-text">Shows en vivo</div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SoundCloud + Spotify + YouTube Section -->
+        <section id="soundcloud" class="section" aria-label="SoundCloud, Spotify y YouTube">
+            <div class="container">
+                <div class="section-header fade-in">
+                    <h2>Música en Plataformas</h2>
+                    <p>Escucha todos mis tracks, demos y exclusivas en todas las plataformas.</p>
+                </div>
+                
+                <div class="platforms-grid fade-in">
+                    <!-- Spotify Section -->
+                    <div class="platform-column spotify-column">
+                        <div class="platform-header">
+                            <h3>🎵 Spotify</h3>
+                        </div>
+                        <div class="platform-content">
+                            <div id="spotify-previews-container" class="spotify-previews">
+                                <div class="loading-spinner">
+                                    <div class="spinner"></div>
+                                    <p>Cargando tracks de Spotify...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SoundCloud Section -->
+                    <div class="platform-column soundcloud-column">
+                        <div class="platform-header">
+                            <h3>🔊 SoundCloud</h3>
+                        </div>
+                        <div class="platform-content">
+                            <div class="soundcloud-cta">
+                                <div class="soundcloud-card">
+                                    <div class="soundcloud-icon">🔊</div>
+                                    <h4>Sígueme en SoundCloud</h4>
+                                    <p>Acceso a demos, unreleased tracks y exclusivas.</p>
+                                    <a href="https://soundcloud.com/alejandrogilabertmusic" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="btn btn-primary">
+                                        Ir a SoundCloud
+                                    </a>
+                                </div>
+                                <div class="soundcloud-highlights">
+                                    <div class="highlight-item">
+                                        <span class="highlight-icon">⭐</span>
+                                        <span class="highlight-text">Demos exclusivos</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <span class="highlight-icon">🔁</span>
+                                        <span class="highlight-text">Remixes únicos</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <span class="highlight-icon">📻</span>
+                                        <span class="highlight-text">Sets en vivo</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <span class="highlight-icon">🎧</span>
+                                        <span class="highlight-text">Unreleased tracks</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- YouTube Section -->
+                <div class="youtube-section fade-in">
+                    <div class="platform-header">
+                        <h3>▶️ YouTube</h3>
+                    </div>
+                    <div id="youtube-container" class="youtube-container">
+                        <!-- YouTube Video 1 -->
+                        <div class="youtube-video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/RkOK10xFITg?rel=0" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <!-- YouTube Video 2 -->
+                        <div class="youtube-video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/r6PGGQnhdGI?rel=0" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        <!-- YouTube Video 3 -->
+                        <div class="youtube-video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/s9wqPuPEBNo?rel=0" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen
+                                loading="lazy">
+                            </iframe>
                         </div>
                     </div>
                 </div>
@@ -2330,73 +2366,6 @@
                         </div>
                         <div class="release-title">Live at Studio</div>
                         <div class="release-description">Grabaciones en directo desde mi estudio, capturando la esencia de la creación en tiempo real.</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SoundCloud + Spotify Section -->
-        <section id="soundcloud" class="section" aria-label="SoundCloud y Spotify">
-            <div class="container">
-                <div class="section-header fade-in">
-                    <h2>En SoundCloud & Spotify</h2>
-                    <p>Escucha todos mis tracks, demos y exclusivas en ambas plataformas.</p>
-                </div>
-                
-                <div class="soundcloud-wrapper fade-in">
-                    <!-- Tabs: SoundCloud | Spotify -->
-                    <div class="platform-tabs">
-                        <button class="tab-btn active" data-tab="soundcloud">
-                            🔊 SoundCloud
-                        </button>
-                        <button class="tab-btn" data-tab="spotify">
-                            🎵 Spotify Previews
-                        </button>
-                    </div>
-
-                    <!-- Tab 1: SoundCloud -->
-                    <div id="soundcloud-tab" class="tab-content active">
-                        <div class="soundcloud-cta fade-in">
-                            <div class="soundcloud-card">
-                                <div class="soundcloud-icon">🔊</div>
-                                <h3>Sígueme en SoundCloud</h3>
-                                <p>Acceso a demos, unreleased tracks y exclusivas.</p>
-                                <a href="https://soundcloud.com/alejandrogilabertmusic" 
-                                   target="_blank" 
-                                   rel="noopener noreferrer" 
-                                   class="btn btn-primary">
-                                    Ir a SoundCloud
-                                </a>
-                            </div>
-                            <div class="soundcloud-highlights">
-                                <div class="highlight-item">
-                                    <span class="highlight-icon">⭐</span>
-                                    <span class="highlight-text">Demos exclusivos</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <span class="highlight-icon">🔁</span>
-                                    <span class="highlight-text">Remixes únicos</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <span class="highlight-icon">📻</span>
-                                    <span class="highlight-text">Sets en vivo</span>
-                                </div>
-                                <div class="highlight-item">
-                                    <span class="highlight-icon">🎧</span>
-                                    <span class="highlight-text">Unreleased tracks</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Tab 2: Spotify Previews (Auto-loaded) -->
-                    <div id="spotify-tab" class="tab-content" style="display: none;">
-                        <div id="spotify-previews-container" class="spotify-previews">
-                            <div class="loading-spinner">
-                                <div class="spinner"></div>
-                                <p>Cargando tus tracks de Spotify...</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -2775,7 +2744,7 @@
         })();
     </script>
 
-    <!-- Spotify Preview Automation Script -->
+    <!-- Spotify & YouTube Automation Script -->
     <script>
     (function() {
         'use strict';
@@ -2784,53 +2753,11 @@
         // CONFIGURACIÓN
         // ============================================
         const ARTIST_ID = '44CrAVRlYEbpintVS3jkmo';
-        const COUNTRY_CODE = 'ES';
-        const TRACKS_LIMIT = 12;
-        
-        // ============================================
-        // TAB SWITCHING
-        // ============================================
-        function initTabs() {
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-            
-            tabButtons.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const tabName = btn.getAttribute('data-tab');
-                    
-                    // Desactivar todos
-                    tabButtons.forEach(b => b.classList.remove('active'));
-                    tabContents.forEach(t => {
-                        t.classList.remove('active');
-                        t.style.display = 'none';
-                    });
-                    
-                    // Activar seleccionado
-                    btn.classList.add('active');
-                    const targetTab = document.getElementById(`${tabName}-tab`);
-                    if (targetTab) {
-                        targetTab.classList.add('active');
-                        targetTab.style.display = 'block';
-                        targetTab.style.width = '100%';
-                        targetTab.style.maxWidth = '100%';
-                    }
-                    
-                    // Si es Spotify tab, cargar si no está cargado
-                    if (tabName === 'spotify') {
-                        const container = document.getElementById('spotify-previews-container');
-                        if (container && container.querySelector('.loading-spinner')) {
-                            loadSpotifyPreviews(container);
-                        }
-                    }
-                });
-            });
-        }
         
         // ============================================
         // CARGAR PREVIEWS DE SPOTIFY
         // ============================================
         function loadSpotifyPreviews(container) {
-            // Usar widget embebido de Spotify (no requiere autenticación)
             const updateIframe = () => {
                 const isMobile = window.innerWidth <= 480;
                 const isTablet = window.innerWidth <= 768 && window.innerWidth > 480;
@@ -2839,7 +2766,7 @@
                 
                 if (isMobile) {
                     iframeHeight = '450';
-                    iframeStyle = 'border-radius: 0;';
+                    iframeStyle = 'border-radius: var(--radius-md);';
                 } else if (isTablet) {
                     iframeHeight = '500';
                     iframeStyle = 'border-radius: var(--radius-md);';
@@ -2887,26 +2814,135 @@
         }
         
         // ============================================
-        // UTILIDADES
+        // YOUTUBE AUTOMATION
         // ============================================
-        function escapeHtml(text) {
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
+        function extractYouTubeVideoId(url) {
+            const patterns = [
+                /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+                /youtube\.com\/.*[?&]v=([^&\n?#]+)/,
+            ];
+            
+            for (const pattern of patterns) {
+                const match = url.match(pattern);
+                if (match && match[1]) {
+                    return match[1];
+                }
+            }
+            return null;
+        }
+        
+        function loadYouTubeVideos() {
+            const container = document.getElementById('youtube-container');
+            if (!container) return;
+            
+            // Verificar si ya hay videos embebidos en el HTML
+            const existingVideos = container.querySelectorAll('.youtube-video-wrapper iframe');
+            const existingVideoIds = new Set();
+            
+            existingVideos.forEach(iframe => {
+                const src = iframe.getAttribute('src');
+                if (src) {
+                    const videoId = extractYouTubeVideoId(src);
+                    if (videoId) {
+                        existingVideoIds.add(videoId);
+                    }
+                }
+            });
+            
+            // Si ya hay videos embebidos, no hacer nada (preservar los videos del HTML)
+            if (existingVideoIds.size > 0) {
+                return; // Los videos ya están en el HTML, no sobrescribir
+            }
+            
+            // Si no hay videos embebidos, buscar enlaces de YouTube en la página
+            const allLinks = document.querySelectorAll('a[href*="youtube.com"], a[href*="youtu.be"]');
+            const videoIds = new Set();
+            
+            allLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href) {
+                    const videoId = extractYouTubeVideoId(href);
+                    if (videoId) {
+                        videoIds.add(videoId);
+                    }
+                }
+            });
+            
+            // Si no hay enlaces, buscar en el texto de la página
+            if (videoIds.size === 0) {
+                const pageText = document.body.innerText || document.body.textContent || '';
+                const urlMatches = pageText.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/g);
+                if (urlMatches) {
+                    urlMatches.forEach(url => {
+                        const videoId = extractYouTubeVideoId(url);
+                        if (videoId) {
+                            videoIds.add(videoId);
+                        }
+                    });
+                }
+            }
+            
+            // Si hay videos encontrados en enlaces, crear los embeds
+            if (videoIds.size > 0) {
+                Array.from(videoIds).forEach((videoId) => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'youtube-video-wrapper';
+                    wrapper.innerHTML = `
+                        <iframe 
+                            src="https://www.youtube.com/embed/${videoId}?rel=0" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen
+                            loading="lazy">
+                        </iframe>
+                    `;
+                    container.appendChild(wrapper);
+                });
+            } else if (existingVideoIds.size === 0) {
+                // Solo mostrar placeholder si no hay videos ni en HTML ni en enlaces
+                const placeholder = container.querySelector('.youtube-placeholder');
+                if (!placeholder) {
+                    container.innerHTML = `
+                        <div class="youtube-placeholder">
+                            <p>Los videos de YouTube se cargarán automáticamente desde los enlaces proporcionados.</p>
+                            <p style="margin-top: var(--space-sm); font-size: 0.875rem; color: var(--text-secondary);">
+                                Añade enlaces de YouTube en cualquier parte de la página y aparecerán aquí automáticamente.
+                            </p>
+                        </div>
+                    `;
+                }
+            }
         }
         
         // ============================================
         // INICIALIZACIÓN
         // ============================================
-        document.addEventListener('DOMContentLoaded', () => {
-            initTabs();
-        });
+        function init() {
+            // Cargar Spotify inmediatamente
+            const spotifyContainer = document.getElementById('spotify-previews-container');
+            if (spotifyContainer) {
+                loadSpotifyPreviews(spotifyContainer);
+            }
+            
+            // Cargar YouTube videos
+            loadYouTubeVideos();
+            
+            // Observar cambios en la página para detectar nuevos enlaces de YouTube
+            const observer = new MutationObserver(() => {
+                loadYouTubeVideos();
+            });
+            
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
+        }
         
-        // Por si el script carga después del DOM
+        // Inicializar cuando el DOM esté listo
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initTabs);
+            document.addEventListener('DOMContentLoaded', init);
         } else {
-            initTabs();
+            init();
         }
     })();
     </script>
