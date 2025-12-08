@@ -683,30 +683,60 @@
         }
 
         .card-image {
-            height: 150px;
+            height: 120px;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             border-bottom: 1px solid var(--border-light);
             overflow: hidden;
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: var(--space-md);
+            padding: var(--space-lg);
             position: relative;
         }
 
-        .card-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            transition: transform var(--transition-base), opacity var(--transition-base);
+        .card-image-initials {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: 0.05em;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            z-index: 2;
         }
 
-        .service-card:hover .card-image img {
-            transform: scale(1.05);
-            opacity: 0.85;
+        .card-image-icon {
+            font-size: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            transition: opacity var(--transition-base);
+        }
+
+        .service-card:hover .card-image::before {
+            opacity: 0.15;
+        }
+
+        .card-image.cedeu {
+            background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+        }
+
+        .card-image.santander {
+            background: linear-gradient(135deg, #0066CC 0%, #0052a3 100%);
+        }
+
+        .card-image.medusa {
+            background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
+        }
+
+        .card-image img {
+            display: none;
         }
 
         .card-content {
@@ -735,6 +765,18 @@
 
         .section-dark .card-image {
             border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .section-dark .card-image.cedeu {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.8) 0%, rgba(0, 77, 153, 0.8) 100%);
+        }
+
+        .section-dark .card-image.santander {
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.8) 0%, rgba(0, 82, 163, 0.8) 100%);
+        }
+
+        .section-dark .card-image.medusa {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.8) 0%, rgba(109, 40, 217, 0.8) 100%);
         }
 
         .section-dark .service-card h3 {
@@ -1665,7 +1707,15 @@
             }
 
             .card-image {
-                height: 120px;
+                height: 100px;
+            }
+
+            .card-image-initials {
+                font-size: 2.5rem;
+            }
+
+            .card-image-icon {
+                font-size: 2rem;
             }
 
             .section {
@@ -1716,7 +1766,15 @@
             }
 
             .card-image {
-                height: 100px;
+                height: 90px;
+            }
+
+            .card-image-initials {
+                font-size: 2rem;
+            }
+
+            .card-image-icon {
+                font-size: 1.75rem;
             }
 
             .card-content {
@@ -2180,11 +2238,8 @@
 
                 <div class="services-grid">
                     <div class="service-card fade-in">
-                        <div class="card-image" style="background-color: #003366; background-image: url('images/teaching/cedeu-logo.png');">
-                            <img src="images/teaching/cedeu-logo.png" 
-                                 alt="Logo CEDEU" 
-                                 loading="lazy"
-                                 onerror="this.style.display='none'">
+                        <div class="card-image cedeu">
+                            <div class="card-image-initials">C</div>
                         </div>
                         <div class="card-content">
                             <h3>CEDEU</h3>
@@ -2192,11 +2247,8 @@
                         </div>
                     </div>
                     <div class="service-card fade-in">
-                        <div class="card-image" style="background-color: #0066CC; background-image: url('images/teaching/santander-logo.png');">
-                            <img src="images/teaching/santander-logo.png" 
-                                 alt="Logo Santander Financial Innovation" 
-                                 loading="lazy"
-                                 onerror="this.style.display='none'">
+                        <div class="card-image santander">
+                            <div class="card-image-initials">SFI</div>
                         </div>
                         <div class="card-content">
                             <h3>Santander FI (BME)</h3>
@@ -2204,11 +2256,8 @@
                         </div>
                     </div>
                     <div class="service-card fade-in">
-                        <div class="card-image" style="background-color: #8B5CF6; background-image: url('images/teaching/medusa-logo.png');">
-                            <img src="images/teaching/medusa-logo.png" 
-                                 alt="Logo Medusa Capital" 
-                                 loading="lazy"
-                                 onerror="this.style.display='none'">
+                        <div class="card-image medusa">
+                            <div class="card-image-icon">🔗</div>
                         </div>
                         <div class="card-content">
                             <h3>Medusa Capital</h3>
