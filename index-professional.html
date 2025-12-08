@@ -683,38 +683,37 @@
         }
 
         .card-image {
-            height: 140px;
+            height: 120px;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             overflow: hidden;
             padding: var(--space-md);
             position: relative;
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
         }
 
         .card-image img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 80px;
+            max-height: 80px;
             width: auto;
             height: auto;
             object-fit: contain;
             object-position: center;
-            transition: transform var(--transition-base), opacity var(--transition-base);
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+            transition: all 0.3s ease;
+            opacity: 0.95;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
         }
 
         .service-card:hover .card-image img {
-            transform: scale(1.05);
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+            transform: scale(1.15) translateY(-2px);
+            opacity: 1;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
         }
 
         .card-image-initials {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--white);
             letter-spacing: 0.05em;
@@ -740,16 +739,11 @@
         }
 
         .card-image.santander {
-            background: linear-gradient(135deg, #0066CC 0%, #0052a3 100%);
+            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
         }
 
         .card-image.medusa {
-            background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
-        }
-
-        /* Si hay imagen, el gradiente es más sutil */
-        .card-image:has(img) {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 100%);
+            background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
         }
 
         .card-content {
@@ -780,16 +774,20 @@
             border-bottom-color: rgba(255, 255, 255, 0.1);
         }
 
+        .section-dark .card-image {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
         .section-dark .card-image.cedeu {
-            background: linear-gradient(135deg, rgba(0, 51, 102, 0.8) 0%, rgba(0, 77, 153, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.9) 0%, rgba(0, 77, 153, 0.9) 100%);
         }
 
         .section-dark .card-image.santander {
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.8) 0%, rgba(0, 82, 163, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.9) 0%, rgba(0, 82, 163, 0.9) 100%);
         }
 
         .section-dark .card-image.medusa {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.8) 0%, rgba(109, 40, 217, 0.8) 100%);
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.9) 0%, rgba(124, 58, 237, 0.9) 100%);
         }
 
         .section-dark .service-card h3 {
@@ -1720,13 +1718,13 @@
             }
 
             .card-image {
-                height: 110px;
+                height: 100px;
                 padding: var(--space-sm);
             }
 
             .card-image img {
-                max-width: 85%;
-                max-height: 85%;
+                max-width: 70px;
+                max-height: 70px;
             }
 
             .card-image-initials {
@@ -1785,13 +1783,13 @@
             }
 
             .card-image {
-                height: 100px;
+                height: 90px;
                 padding: var(--space-xs);
             }
 
             .card-image img {
-                max-width: 80%;
-                max-height: 80%;
+                max-width: 60px;
+                max-height: 60px;
             }
 
             .card-image-initials {
