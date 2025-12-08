@@ -683,15 +683,34 @@
         }
 
         .card-image {
-            height: 120px;
+            height: 140px;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             border-bottom: 1px solid var(--border-light);
             overflow: hidden;
-            padding: var(--space-lg);
+            padding: var(--space-md);
             position: relative;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .card-image img {
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+            transition: transform var(--transition-base), opacity var(--transition-base);
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+        }
+
+        .service-card:hover .card-image img {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
         }
 
         .card-image-initials {
@@ -701,26 +720,19 @@
             letter-spacing: 0.05em;
             text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             z-index: 2;
+            display: none;
         }
 
         .card-image-icon {
             font-size: 2.5rem;
             opacity: 0.9;
+            display: none;
         }
 
-        .card-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            opacity: 0.1;
-            transition: opacity var(--transition-base);
-        }
-
-        .service-card:hover .card-image::before {
-            opacity: 0.15;
+        /* Mostrar iniciales solo si no hay imagen */
+        .card-image:not(:has(img)) .card-image-initials,
+        .card-image:not(:has(img)) .card-image-icon {
+            display: block;
         }
 
         .card-image.cedeu {
@@ -735,8 +747,9 @@
             background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
         }
 
-        .card-image img {
-            display: none;
+        /* Si hay imagen, el gradiente es más sutil */
+        .card-image:has(img) {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.05) 100%);
         }
 
         .card-content {
@@ -1707,7 +1720,13 @@
             }
 
             .card-image {
-                height: 100px;
+                height: 110px;
+                padding: var(--space-sm);
+            }
+
+            .card-image img {
+                max-width: 85%;
+                max-height: 85%;
             }
 
             .card-image-initials {
@@ -1766,7 +1785,13 @@
             }
 
             .card-image {
-                height: 90px;
+                height: 100px;
+                padding: var(--space-xs);
+            }
+
+            .card-image img {
+                max-width: 80%;
+                max-height: 80%;
             }
 
             .card-image-initials {
@@ -2239,6 +2264,10 @@
                 <div class="services-grid">
                     <div class="service-card fade-in">
                         <div class="card-image cedeu">
+                            <img src="images/teaching/cedeu-logo.png" 
+                                 alt="Logo CEDEU" 
+                                 loading="lazy"
+                                 onerror="this.style.display='none'; this.parentElement.querySelector('.card-image-initials').style.display='block';">
                             <div class="card-image-initials">C</div>
                         </div>
                         <div class="card-content">
@@ -2248,6 +2277,10 @@
                     </div>
                     <div class="service-card fade-in">
                         <div class="card-image santander">
+                            <img src="images/teaching/santander-logo.png" 
+                                 alt="Logo Santander Financial Innovation" 
+                                 loading="lazy"
+                                 onerror="this.style.display='none'; this.parentElement.querySelector('.card-image-initials').style.display='block';">
                             <div class="card-image-initials">SFI</div>
                         </div>
                         <div class="card-content">
@@ -2257,6 +2290,10 @@
                     </div>
                     <div class="service-card fade-in">
                         <div class="card-image medusa">
+                            <img src="images/teaching/medusa-logo.png" 
+                                 alt="Logo Medusa Capital" 
+                                 loading="lazy"
+                                 onerror="this.style.display='none'; this.parentElement.querySelector('.card-image-icon').style.display='block';">
                             <div class="card-image-icon">🔗</div>
                         </div>
                         <div class="card-content">
