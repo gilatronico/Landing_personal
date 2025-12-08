@@ -664,7 +664,7 @@
         }
 
         .service-card {
-            padding: var(--space-xl);
+            padding: 0;
             background: var(--white);
             border-radius: var(--radius-md);
             transition: all var(--transition-base);
@@ -672,6 +672,8 @@
             border: 1px solid var(--border-light);
             display: flex;
             flex-direction: column;
+            height: 100%;
+            overflow: hidden;
         }
 
         .service-card:hover {
@@ -680,8 +682,43 @@
             border-color: var(--accent-primary);
         }
 
+        .card-image {
+            height: 150px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-light);
+            overflow: hidden;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: var(--space-md);
+            position: relative;
+        }
+
+        .card-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform var(--transition-base), opacity var(--transition-base);
+        }
+
+        .service-card:hover .card-image img {
+            transform: scale(1.05);
+            opacity: 0.85;
+        }
+
+        .card-content {
+            padding: var(--space-lg);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+        }
+
         .service-card h3 {
-            margin-bottom: var(--space-sm);
+            margin-bottom: var(--space-xs);
             color: var(--text-primary);
         }
 
@@ -694,6 +731,10 @@
         .section-dark .service-card:hover {
             background: rgba(255, 255, 255, 0.08);
             border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .section-dark .card-image {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
         }
 
         .section-dark .service-card h3 {
@@ -1623,6 +1664,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .card-image {
+                height: 120px;
+            }
+
             .section {
                 padding: var(--space-2xl) 0;
             }
@@ -1668,6 +1713,14 @@
                 max-width: 280px;
                 height: auto;
                 aspect-ratio: 1 / 1;
+            }
+
+            .card-image {
+                height: 100px;
+            }
+
+            .card-content {
+                padding: var(--space-md);
             }
         }
 
@@ -2127,16 +2180,40 @@
 
                 <div class="services-grid">
                     <div class="service-card fade-in">
-                        <h3>CEDEU</h3>
-                        <p>Digital Assets, Blockchain, Product Management y APIs. Proyectos aplicados.</p>
+                        <div class="card-image" style="background-color: #003366; background-image: url('images/teaching/cedeu-logo.png');">
+                            <img src="images/teaching/cedeu-logo.png" 
+                                 alt="Logo CEDEU" 
+                                 loading="lazy"
+                                 onerror="this.style.display='none'">
+                        </div>
+                        <div class="card-content">
+                            <h3>CEDEU</h3>
+                            <p>Digital Assets, Blockchain, Product Management y APIs. Proyectos aplicados.</p>
+                        </div>
                     </div>
                     <div class="service-card fade-in">
-                        <h3>Santander FI (BME)</h3>
-                        <p>Formación profesional en Product, Web3 y Crypto para profesionales del mercado.</p>
+                        <div class="card-image" style="background-color: #0066CC; background-image: url('images/teaching/santander-logo.png');">
+                            <img src="images/teaching/santander-logo.png" 
+                                 alt="Logo Santander Financial Innovation" 
+                                 loading="lazy"
+                                 onerror="this.style.display='none'">
+                        </div>
+                        <div class="card-content">
+                            <h3>Santander FI (BME)</h3>
+                            <p>Formación profesional en Product, Web3 y Crypto para profesionales del mercado.</p>
+                        </div>
                     </div>
                     <div class="service-card fade-in">
-                        <h3>Medusa Capital</h3>
-                        <p>Blockchain y Digital Assets. Formación profesional para equipos.</p>
+                        <div class="card-image" style="background-color: #8B5CF6; background-image: url('images/teaching/medusa-logo.png');">
+                            <img src="images/teaching/medusa-logo.png" 
+                                 alt="Logo Medusa Capital" 
+                                 loading="lazy"
+                                 onerror="this.style.display='none'">
+                        </div>
+                        <div class="card-content">
+                            <h3>Medusa Capital</h3>
+                            <p>Blockchain y Digital Assets. Formación profesional para equipos.</p>
+                        </div>
                     </div>
                 </div>
 
