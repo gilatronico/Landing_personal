@@ -658,9 +658,10 @@
            ============================================ */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: var(--space-lg);
             margin-top: var(--space-lg);
+            align-items: stretch;
         }
 
         .service-card {
@@ -674,6 +675,7 @@
             flex-direction: column;
             height: 100%;
             overflow: hidden;
+            min-height: 280px;
         }
 
         .service-card:hover {
@@ -739,7 +741,7 @@
         }
 
         .card-image.santander {
-            background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%);
+            background: linear-gradient(135deg, #EC0000 0%, #CC0000 100%);
         }
 
         .card-image.medusa {
@@ -783,7 +785,7 @@
         }
 
         .section-dark .card-image.santander {
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.9) 0%, rgba(0, 82, 163, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(236, 0, 0, 0.9) 0%, rgba(204, 0, 0, 0.9) 100%);
         }
 
         .section-dark .card-image.medusa {
@@ -1715,6 +1717,11 @@
 
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+
+            .service-card {
+                min-height: auto;
             }
 
             .card-image {
